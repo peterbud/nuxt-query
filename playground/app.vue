@@ -1,8 +1,37 @@
+<script setup>
+const getPosts = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+  return response.json()
+}
+
+const { isPending, isFetching, isError, data, error } = useQuery({
+  queryKey: ['posts'],
+  queryFn: getPosts,
+})
+</script>
+
 <template>
   <div>
-    Nuxt module playground!
+    <h1>Posts</h1>
+    <div v-if="isPending">
+      Loading...
+    </div>
+
+    <div v-else-if="isError">
+      {{ error.message }}
+    </div>
+
+    <div v-else-if="isFetching">
+      Refetching...
+    </div>
+
+    <ul v-else>
+      <li
+        v-for="post in data"
+        :key="post.id"
+      >
+        {{ post.title }}
+      </li>
+    </ul>
   </div>
 </template>
-
-<script setup>
-</script>

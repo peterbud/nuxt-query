@@ -20,6 +20,7 @@
   "scripts": {
     "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
+    "dev:client": "concurrently \"nuxi dev client --port 3300\" \"nuxi dev playground\"",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
@@ -29,7 +30,10 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.15.4"
+    "@nuxt/devtools-kit": "^2.0.0",
+    "@nuxt/devtools-ui-kit": "^2.0.0",
+    "@nuxt/kit": "^3.15.4",
+    "defu": "^6.1.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.0.0",
@@ -38,11 +42,16 @@
     "@nuxt/schema": "^3.15.4",
     "@nuxt/test-utils": "^3.15.4",
     "@types/node": "latest",
+    "@unocss/nuxt": "^65.4.3",
     "changelogen": "^0.5.7",
+    "concurrently": "^9.1.2",
     "eslint": "^9.20.1",
     "nuxt": "^3.15.4",
     "typescript": "~5.7.3",
     "vitest": "^3.0.5",
     "vue-tsc": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@tanstack/vue-query": "^5.66.0"
   }
 }
