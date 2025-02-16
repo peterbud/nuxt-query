@@ -41,7 +41,7 @@ export function setupDevToolsUI(nuxt: Nuxt, resolver: Resolver) {
     // iframe view
     view: {
       type: 'iframe',
-      src: DEVTOOLS_UI_ROUTE,
+      src: `${DEVTOOLS_UI_ROUTE}/vue-query`,
     },
   })
 }

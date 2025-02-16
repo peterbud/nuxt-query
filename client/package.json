@@ -1,5 +1,8 @@
 {
   "name": "nuxt-query-client",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@tanstack/vue-query": "^5.66.0"
+  }
 }
