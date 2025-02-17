@@ -8,7 +8,6 @@ const getPosts = async () => {
 const { isPending, isFetching, isError, data, error } = useQuery({
   queryKey: ['posts'],
   queryFn: getPosts,
-  refetchInterval: 5000,
 })
 </script>
 

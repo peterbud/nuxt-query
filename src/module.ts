@@ -1,5 +1,6 @@
 import { defineNuxtModule, addImports, addPlugin, createResolver } from '@nuxt/kit'
 import { defu } from 'defu'
+import type { QueryClientConfig } from '@tanstack/vue-query'
 import { setupDevToolsUI } from './devtools'
 
 const composables = [
@@ -17,9 +18,13 @@ type VueQueryComposables = typeof composables[number]
 export interface ModuleOptions {
   autoImports: VueQueryComposables[] | false
   devtools: boolean
+  queryClientOptions: QueryClientConfig | undefined
 }
 
 declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    nuxtQuery: ModuleOptions
+  }
   interface RuntimeConfig {
     nuxtQuery: ModuleOptions
   }
@@ -43,6 +48,13 @@ export default defineNuxtModule<ModuleOptions>({
   },
 
   setup(options, nuxt) {
+    // Runtime Config
+    nuxt.options.runtimeConfig.public.nuxtQuery = defu(
+      nuxt.options.runtimeConfig.public.nuxtQuery,
+      {
+        ...options,
+      },
+    )
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
 
@@ -52,13 +64,5 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (options.devtools)
       setupDevToolsUI(nuxt, resolver)
-
-    // Runtime Config
-    nuxt.options.runtimeConfig.nuxtQuery = defu(
-      nuxt.options.runtimeConfig.nuxtQuery,
-      {
-        ...options,
-      },
-    )
   },
 })
