@@ -48,7 +48,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
 
   setup(options, nuxt) {
-    console.log('module options', options)
     // Expose relevant runtime config to public
     nuxt.options.runtimeConfig.public.nuxtQuery = defu(
       nuxt.options.runtimeConfig.public.nuxtQuery,

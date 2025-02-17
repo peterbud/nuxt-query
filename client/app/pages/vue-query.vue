@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
-import type { Query, QueryCacheNotifyEvent } from '@tanstack/vue-query'
+import type { Query, QueryCacheNotifyEvent, QueryState } from '@tanstack/vue-query'
 
 function mapQuery(query: Query) {
   return {
@@ -25,8 +25,9 @@ const selectedQuery = reactive({
     fetchStatus: 'idle',
     status: 'pending',
     dataUpdatedAt: 0,
+    dataUpdateCount: 0,
     isInvalidated: false,
-  }),
+  } as QueryState),
 })
 
 function onQueryNotification(event: QueryCacheNotifyEvent) {
@@ -100,6 +101,7 @@ function selectQuery(queryItem: Query) {
             <p><strong>Fetch Status:</strong> {{ selectedQuery.state.fetchStatus }}</p>
             <p><strong>Invalidated:</strong> {{ selectedQuery.state.isInvalidated }}</p>
             <p><strong>Updated At:</strong> {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}</p>
+            <p><strong>Update Count:</strong> {{ selectedQuery.state.dataUpdateCount }}</p>
             <p><strong>Active:</strong> {{ selectedQuery.observerCount === 0 ? 'Inactive' : 'Active' }}</p>
             <!-- <p><strong>IsStale:</strong> {{ selectedQuery.isStale() }}</p> -->
             <!-- <p><strong>Disabled:</strong> {{ selectedQuery.isDisabled() }}</p> -->
