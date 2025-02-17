@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
+  ssr: false,
   devtools: { enabled: true },
   compatibilityDate: '2025-02-14',
   nuxtQuery: {
