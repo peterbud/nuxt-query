@@ -1,19 +1,10 @@
 <script setup lang="ts">
-import type { QueryKey, QueryState } from '@tanstack/vue-query'
+import type { Query } from '@tanstack/vue-query'
 
-interface QueryItem {
-  queryKey: QueryKey
-  queryHash: string
-  observerCount: number
-  state: Ref<QueryState>
-}
-
-withDefaults(defineProps<{
-  item: QueryItem
+defineProps<{
+  item: Query
   index?: number
-}>(), {
-  index: 0,
-})
+}>()
 </script>
 
 <template>
@@ -24,26 +15,26 @@ withDefaults(defineProps<{
     <div class="text-right">
       <span
         :class="{
-          'i-carbon-play-outline-filled text-green': item.state.value.fetchStatus === 'fetching',
-          'i-carbon-pause-outline-filled text-gray': item.state.value.fetchStatus === 'paused',
-          'i-carbon-navaid-helipad text-blue': item.state.value.fetchStatus === 'idle',
+          'i-carbon-play-outline-filled text-green': item.state.fetchStatus === 'fetching',
+          'i-carbon-pause-outline-filled text-gray': item.state.fetchStatus === 'paused',
+          'i-carbon-navaid-helipad text-blue': item.state.fetchStatus === 'idle',
         }"
       />
     </div>
     <div class="text-right">
       <span
         :class="{
-          'i-carbon-checkmark-filled text-green': item.state.value.status === 'success',
-          'i-carbon-error-filled text-red': item.state.value.status === 'error',
-          'i-carbon-help-filled text-gray': item.state.value.status === 'pending',
+          'i-carbon-checkmark-filled text-green': item.state.status === 'success',
+          'i-carbon-error-filled text-red': item.state.status === 'error',
+          'i-carbon-help-filled text-gray': item.state.status === 'pending',
         }"
       />
     </div>
     <div class="text-right">
       <span
         :class="{
-          'i-carbon-view-off-filled text-gray': item.observerCount === 0,
-          'i-carbon-view-filled text-blue': item.observerCount !== 0,
+          'i-carbon-view-off-filled text-gray': item.observers.length === 0,
+          'i-carbon-view-filled text-blue': item.observers.length !== 0,
         }"
       />
     </div>

@@ -1,46 +1,39 @@
 <script setup lang="ts">
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
-import type { Query, QueryCacheNotifyEvent, QueryState } from '@tanstack/vue-query'
+import type { Query, QueryCacheNotifyEvent, QueryClient } from '@tanstack/vue-query'
 
-function mapQuery(query: Query) {
-  return {
-    queryKey: query.queryKey,
-    queryHash: query.queryHash,
-    observerCount: query.observers?.length ?? 0,
-    state: ref(query.state),
-  }
-}
-
-const devtoolsClient = useDevtoolsClient()
-const queryClient = computed(() => devtoolsClient.value?.host?.nuxt.vueApp.config.globalProperties?.$queryClient)
-const queryCache = computed(() => queryClient.value?.getQueryCache())
-const queries = computed(() => queryClient.value?.getQueryCache().getAll().map(mapQuery))
+// function mapQuery(query: Query) {
+//   return {
+//     queryKey: query.queryKey,
+//     queryHash: query.queryHash,
+//     observerCount: query.observers?.length ?? 0,
+//     state: ref(query.state),
+//   }
+// }
 
 const searchString = ref('')
-const selectedQuery = reactive({
-  queryKey: '',
-  queryHash: '',
-  observerCount: 0,
-  state: ref({
-    fetchStatus: 'idle',
-    status: 'pending',
-    dataUpdatedAt: 0,
-    dataUpdateCount: 0,
-    isInvalidated: false,
-  } as QueryState),
+const queries = ref(new Array<Query>())
+const selectedQuery = ref<Query | null>(null)
+
+const devtoolsClient = useDevtoolsClient()
+const queryClient = computed(() => devtoolsClient.value?.host?.nuxt.vueApp.config.globalProperties?.$queryClient as QueryClient | undefined)
+const queryCache = computed(() => queryClient.value?.getQueryCache())
+const filteredQueries = computed(() => {
+  if (!queries.value) {
+    return [] as Query[]
+  }
+  return queries.value
 })
 
 function onQueryNotification(event: QueryCacheNotifyEvent) {
   switch (event.type) {
-    case 'updated':
-      console.log('Query updated', event.query.queryKey)
-      if (selectedQuery.queryHash === event.query.queryHash) {
-        selectedQuery.queryKey = event.query.queryKey
-        selectedQuery.queryHash = event.query.queryHash
-        selectedQuery.observerCount = event.query.observers?.length ?? 0
-        selectedQuery.state = { ...event.query.state }
+    case 'updated': {
+      const query = queries.value.find(q => q.queryHash === event.query.queryHash)
+      if (query) {
+        query.state = { ...event.query.state }
       }
       break
+    }
     case 'added':
       console.log('Query added', event.query.queryKey)
       break
@@ -57,16 +50,22 @@ watchEffect(() => {
     return
   }
 
+  queryCache.value.getAll().forEach((query) => {
+    console.log('Query added in watchEffect', query.queryKey)
+    queries.value.push(query)
+  })
   const unsubscribe = queryCache.value.subscribe(onQueryNotification)
 
   onBeforeUnmount(() => {
+    queries.value = []
     queryCache.value?.clear()
     unsubscribe()
   })
 })
 
-function selectQuery(queryItem: Query) {
-  Object.assign(selectedQuery, mapQuery(queryItem))
+function selectQuery(query: Query) {
+  console.log('Selected query', query.queryKey)
+  selectedQuery.value = toRaw(query)
 }
 </script>
 
@@ -85,8 +84,8 @@ function selectQuery(queryItem: Query) {
       <QueryListItem
         v-for="item in queries"
         :key="item.queryHash"
-        :item="item"
-        @click="selectQuery(item)"
+        :item="item as Query"
+        @click="selectQuery(item as Query)"
       />
     </template>
 
@@ -102,9 +101,9 @@ function selectQuery(queryItem: Query) {
             <p><strong>Invalidated:</strong> {{ selectedQuery.state.isInvalidated }}</p>
             <p><strong>Updated At:</strong> {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}</p>
             <p><strong>Update Count:</strong> {{ selectedQuery.state.dataUpdateCount }}</p>
-            <p><strong>Active:</strong> {{ selectedQuery.observerCount === 0 ? 'Inactive' : 'Active' }}</p>
-            <!-- <p><strong>IsStale:</strong> {{ selectedQuery.isStale() }}</p> -->
-            <!-- <p><strong>Disabled:</strong> {{ selectedQuery.isDisabled() }}</p> -->
+            <p><strong>Active:</strong> {{ selectedQuery.observers.length === 0 ? 'Inactive' : 'Active' }}</p>
+            <p><strong>IsStale:</strong> {{ toRaw(selectedQuery)?.isStale() }}</p>
+            <p><strong>Disabled:</strong> {{ toRaw(selectedQuery)?.isDisabled() }}</p>
           </div>
           <div v-else>
             <span class="op75">Select a query</span>
