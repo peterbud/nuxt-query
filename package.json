@@ -34,7 +34,8 @@
     "@nuxt/devtools-ui-kit": "^2.0.0",
     "@nuxt/kit": "^3.15.4",
     "defu": "^6.1.4",
-    "sirv": "^3.0.1"
+    "sirv": "^3.0.1",
+    "@tanstack/vue-query": "^5.66.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.0.0",
@@ -51,8 +52,5 @@
     "typescript": "~5.6.3",
     "vitest": "^3.0.5",
     "vue-tsc": "^2.2.0"
-  },
-  "peerDependencies": {
-    "@tanstack/vue-query": "^5.66.0"
   }
 }

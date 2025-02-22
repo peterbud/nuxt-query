@@ -25,7 +25,7 @@ Nuxt Query is a module for integrating [Vue Query](https://tanstack.com/query/la
 You can add the module via the Nuxt CLI:
 
 ```bash
-npx nuxi module add nuxt-query @tanstack/vue-query
+npx nuxi module add nuxt-query
 ```
 
 ## Configuration
