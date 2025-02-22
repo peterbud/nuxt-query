@@ -1,5 +1,3 @@
-// import type{ ClientOptions } from '@tanstack/vue-query'
-
 import { QueryClient, QueryCache } from '@tanstack/vue-query'
 
 export default defineNuxtPlugin({
