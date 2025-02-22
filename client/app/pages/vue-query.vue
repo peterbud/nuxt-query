@@ -51,7 +51,6 @@ watchEffect(() => {
   }
 
   queryCache.value.getAll().forEach((query) => {
-    console.log('Query added in watchEffect', query.queryKey)
     queries.value.push(query)
   })
   const unsubscribe = queryCache.value.subscribe(onQueryNotification)
@@ -70,7 +69,10 @@ function selectQuery(query: Query) {
 </script>
 
 <template>
-  <NSplitPane storage-key="tab-vue-query">
+  <NSplitPane
+    storage-key="tab-vue-query"
+    class="h-full"
+  >
     <template #left>
       <NNavbar
         v-model:search="searchString"
@@ -90,25 +92,50 @@ function selectQuery(query: Query) {
     </template>
 
     <template #right>
-      <NPanelGrids class="w-full">
-        <NCard class="px6 py2 w-full">
-          <div v-if="selectedQuery">
-            <h3>Selected Query</h3>
-            <p><strong>Query Key:</strong> {{ selectedQuery?.queryKey }}</p>
-            <p><strong>Query Hash:</strong> {{ selectedQuery?.queryHash }}</p>
-            <p><strong>Status:</strong> {{ selectedQuery.state.status }}</p>
-            <p><strong>Fetch Status:</strong> {{ selectedQuery.state.fetchStatus }}</p>
-            <p><strong>Invalidated:</strong> {{ selectedQuery.state.isInvalidated }}</p>
-            <p><strong>Updated At:</strong> {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}</p>
-            <p><strong>Update Count:</strong> {{ selectedQuery.state.dataUpdateCount }}</p>
-            <p><strong>Active:</strong> {{ selectedQuery.observers.length === 0 ? 'Inactive' : 'Active' }}</p>
-            <p><strong>IsStale:</strong> {{ toRaw(selectedQuery)?.isStale() }}</p>
-            <p><strong>Disabled:</strong> {{ toRaw(selectedQuery)?.isDisabled() }}</p>
-          </div>
-          <div v-else>
-            <span class="op75">Select a query</span>
-          </div>
-        </NCard>
+      <NPanelGrids class="">
+        <div
+          v-if="selectedQuery"
+          class="w-full"
+        >
+          <NSectionBlock
+            icon="carbon-moon"
+            text="Query Overview"
+            :padding="true"
+          >
+            <NCard class="px6 py2">
+              <p><strong>Query Key:</strong> {{ selectedQuery?.queryKey }}</p>
+              <p><strong>Query Hash:</strong> {{ selectedQuery?.queryHash }}</p>
+              <p><strong>Last Updated:</strong> {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}</p>
+            </NCard>
+          </NSectionBlock>
+          <NSectionBlock
+            icon="carbon-settings"
+            text="Data Explorer"
+            :padding="true"
+          >
+            <NCard>
+              TBD
+            </NCard>
+          </NSectionBlock>
+          <NSectionBlock
+            icon="carbon-settings"
+            text="Query Explorer"
+            :padding="true"
+          >
+            <NCard>
+              <p><strong>Status:</strong> {{ selectedQuery.state.status }}</p>
+              <p><strong>Fetch Status:</strong> {{ selectedQuery.state.fetchStatus }}</p>
+              <p><strong>Invalidated:</strong> {{ selectedQuery.state.isInvalidated }}</p>
+              <p><strong>Update Count:</strong> {{ selectedQuery.state.dataUpdateCount }}</p>
+              <p><strong>Active:</strong> {{ selectedQuery.observers.length === 0 ? 'Inactive' : 'Active' }}</p>
+              <p><strong>IsStale:</strong> {{ toRaw(selectedQuery)?.isStale() }}</p>
+              <p><strong>Disabled:</strong> {{ toRaw(selectedQuery)?.isDisabled() }}</p>
+            </NCard>
+          </NSectionBlock>
+        </div>
+        <div v-else>
+          <span class="op75">Select a query</span>
+        </div>
       </NPanelGrids>
     </template>
   </NSplitPane>

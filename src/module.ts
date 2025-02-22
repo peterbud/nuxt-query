@@ -1,6 +1,7 @@
 import { defineNuxtModule, addImports, addPlugin, createResolver } from '@nuxt/kit'
 import { defu } from 'defu'
-import type { QueryClientConfig } from '@tanstack/vue-query'
+import type { QueryClient, QueryClientConfig } from '@tanstack/vue-query'
+import type { HookResult } from '@nuxt/schema'
 import { setupDevToolsUI } from './devtools'
 
 const _composables = [
@@ -14,7 +15,6 @@ const _composables = [
 ] as const
 type VueQueryComposables = typeof _composables[number]
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {
   autoImports: VueQueryComposables[] | false
   devtools: boolean
@@ -32,6 +32,16 @@ declare module '@nuxt/schema' {
   interface NuxtOptions {
     nuxtQuery: ModuleOptions
   }
+}
+
+export interface ModuleRuntimeHooks {
+  'nuxt-query:configure': (
+    getPluginOptions: (queryClient?: QueryClient) => void) => HookResult
+}
+
+declare module '#app' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  interface RuntimeNuxtHooks extends ModuleRuntimeHooks { }
 }
 
 const resolver = createResolver(import.meta.url)
@@ -55,10 +65,10 @@ export default defineNuxtModule<ModuleOptions>({
         queryClientOptions: { ...options.queryClientOptions },
       },
     )
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+
     addPlugin(resolver.resolve('./runtime/plugin'))
 
-    // Auto Imports tanstack composables
+    // Auto imports tanstack composables
     if (options.autoImports && options.autoImports.length > 0)
       addImports(options.autoImports.map(name => ({ name, from: '@tanstack/vue-query' })))
 
