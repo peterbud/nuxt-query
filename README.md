@@ -25,12 +25,12 @@ Nuxt Query is a module for integrating [Vue Query](https://tanstack.com/query/la
 You can add the module via the Nuxt CLI:
 
 ```bash
-npx nuxi module add nuxt-query
+npx nuxi module add nuxt-query @tanstack/vue-query
 ```
 
 ## Configuration
 
-To configure Nuxt Query, update your nuxt.config.ts  specifying the options you want for Vue Query:
+To configure Nuxt Query, update your `nuxt.config.ts` specifying the options you want for Vue Query:
 
 ```typescript
 // nuxt.config.ts
@@ -79,7 +79,7 @@ That's it! You can now use Nuxt Query in your Nuxt app ✨
 
 Nuxt Query provides a hook that you can use in your application if you need a more complex setup for Vue Query, like custom query client with onSuccess or onError handlers, which would not be possible to configure with the options available in the `nuxt.config.ts`.
 
-The hook is called 'nuxt-query:configure' and you can use it in a plugin to return a custom `QueryClient` object:
+The hook is called `nuxt-query:configure` and you can use it in a plugin to return a custom `QueryClient` object:
 
 ```typescript
 // plugins/nuxt-query.ts
