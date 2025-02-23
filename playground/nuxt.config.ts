@@ -13,7 +13,6 @@ export default defineNuxtConfig({
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: false,
-          refetchInterval: 5000,
         },
       },
     },
