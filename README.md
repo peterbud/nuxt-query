@@ -14,10 +14,10 @@ Nuxt Query is a module for integrating [Vue Query](https://tanstack.com/query/la
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp; 0 config integration
-- 🚠 &nbsp; Full support of Vue Query config settings
-- 🌲 &nbsp; Support for complex `QueryClient` setup with handlers via hooks
-- 🪄 &nbsp; Configurable auto-imports for Vue Query composables
+- ⚙️ &nbsp; 0 config integration
+- 💪 &nbsp; Full support of Vue Query config settings
+- 🏆 &nbsp; Support for complex `QueryClient` setup with handlers via hooks
+- 🤖 &nbsp; Configurable auto-imports for Vue Query composables
 - 🧩 &nbsp; Nuxt DevTools integration for easy debugging
 
 ## Installation
@@ -37,11 +37,23 @@ To configure Nuxt Query, update your `nuxt.config.ts` specifying the options you
 export default defineNuxtConfig({
   modules: ['nuxt-query'],
   nuxtQuery: {
-    autoImports: ['useQuery'],
+    // Specify which Vue Query composable(s) to auto-import
+    autoImports: ['useQuery', 'useMutation'],
+
+    // Enable / disable Nuxt DevTools integration (default: true).
+    devtools: true,
+
+    // These are the same options as the QueryClient 
+    // from @tanstack/vue-query, will be passed 
+    // to the QueryClient constructor
+    // More details: https://tanstack.com/query/v5/docs/reference/QueryClient
     queryClientOptions: {
       defaultOptions: {
         queries: {
+          // for example disable refetching on window focus
           refetchOnWindowFocus: false,
+
+          // or change the default refetch interval
           refetchInterval: 5000,
         },
       },
@@ -50,7 +62,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Then, in your component, you can define and queries with the `useQuery` composable (autoimported):
+Then, in your component, you can define and run queries with the `useQuery` composable (auto-imported):
 
 ```vue
 // app.vue
@@ -69,17 +81,11 @@ const { isPending, isFetching, isError, data, error } = useQuery({
 
 That's it! You can now use Nuxt Query in your Nuxt app ✨
 
-## Module Options
-
-- `autoImports`: Boolean or an array of Vue Query composable names to be auto-imported (default: false).
-- `devtools`: Boolean flag to enable Nuxt DevTools integration (default: true).
-- `queryClientOptions`: Object to configure the QueryClient from @tanstack/vue-query (optional).
-
 ## Module Hooks
 
-Nuxt Query provides a hook that you can use in your application if you need a more complex setup for Vue Query, like custom query client with onSuccess or onError handlers, which would not be possible to configure with the options available in the `nuxt.config.ts`.
+Nuxt Query provides a hook that you can use in your application if you need a more complex setup for Vue Query, like custom query client with centralized `onSuccess` or `onError` handlers, which would not be possible to configure with the options available in the `nuxt.config.ts`.
 
-The hook is called `nuxt-query:configure` and you can use it in a plugin to return a custom `QueryClient` object:
+The hook is called `nuxt-query:configure` and you can use it in a plugin to return a custom `QueryClient` object in the following way:
 
 ```typescript
 // plugins/nuxt-query.ts
@@ -98,7 +104,8 @@ export default defineNuxtPlugin({
         }),
       })
 
-      // return the plugin options which will be used by the module
+      // return the plugin options which will be used
+      // by the module at startup
       getPluginOptions(queryClient)
     })
   },
