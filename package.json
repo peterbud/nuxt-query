@@ -1,8 +1,12 @@
 {
   "name": "nuxt-query",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "peterbud/nuxt-query",
+  "version": "0.0.1",
+  "description": "Nuxt integration for Tanstack Vue Query",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterbud/nuxt-query.git"
+  },
+  "author": "Peter Budai",
   "license": "MIT",
   "type": "module",
   "exports": {
