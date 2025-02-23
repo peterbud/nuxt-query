@@ -28,19 +28,35 @@ const filteredQueries = computed(() => {
 function onQueryNotification(event: QueryCacheNotifyEvent) {
   switch (event.type) {
     case 'updated': {
+      console.log('Query updated', event.query.queryKey)
       const query = queries.value.find(q => q.queryHash === event.query.queryHash)
       if (query) {
         query.state = { ...event.query.state }
       }
       break
     }
+    case 'observerResultsUpdated': {
+      // when data becomes stale, the query is updated
+      console.log('Query observerResultsUpdated', event.query.queryKey, event.query.isStale(), event.query.state)
+      break
+    }
     case 'added':
       console.log('Query added', event.query.queryKey)
+      queries.value.push(event.query)
       break
-    case 'removed':
+    case 'removed': {
       console.log('Query removed', event.query.queryKey)
+      const index = queries.value.findIndex(q => q.queryHash === event.query.queryHash)
+      if (index !== -1) {
+        queries.value.splice(index, 1)
+      }
+      if (selectedQuery.value?.queryHash === event.query.queryHash) {
+        selectedQuery.value = null
+      }
       break
+    }
     default:
+      console.log('Unknown event', event.type)
       break
   }
 }
@@ -102,11 +118,26 @@ function selectQuery(query: Query) {
             text="Query Overview"
             :padding="true"
           >
-            <NCard class="px6 py2">
-              <p><strong>Query Key:</strong> {{ selectedQuery?.queryKey }}</p>
-              <p><strong>Query Hash:</strong> {{ selectedQuery?.queryHash }}</p>
-              <p><strong>Last Updated:</strong> {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}</p>
-            </NCard>
+            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
+              <div>
+                <strong>Query Key:</strong>
+              </div>
+              <div>
+                {{ selectedQuery?.queryKey }}
+              </div>
+              <div>
+                <strong>Query Hash:</strong>
+              </div>
+              <div>
+                {{ selectedQuery?.queryHash }}
+              </div>
+              <div>
+                <strong>Last Updated:</strong>
+              </div>
+              <div>
+                {{ new Date(selectedQuery.state.dataUpdatedAt).toLocaleString() }}
+              </div>
+            </div>
           </NSectionBlock>
           <NSectionBlock
             icon="carbon-settings"
@@ -119,18 +150,43 @@ function selectQuery(query: Query) {
           </NSectionBlock>
           <NSectionBlock
             icon="carbon-settings"
-            text="Query Explorer"
+            text="Query Details"
             :padding="true"
           >
-            <NCard>
-              <p><strong>Status:</strong> {{ selectedQuery.state.status }}</p>
-              <p><strong>Fetch Status:</strong> {{ selectedQuery.state.fetchStatus }}</p>
-              <p><strong>Invalidated:</strong> {{ selectedQuery.state.isInvalidated }}</p>
-              <p><strong>Update Count:</strong> {{ selectedQuery.state.dataUpdateCount }}</p>
-              <p><strong>Active:</strong> {{ selectedQuery.observers.length === 0 ? 'Inactive' : 'Active' }}</p>
-              <p><strong>IsStale:</strong> {{ toRaw(selectedQuery)?.isStale() }}</p>
-              <p><strong>Disabled:</strong> {{ toRaw(selectedQuery)?.isDisabled() }}</p>
-            </NCard>
+            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
+              <div><strong>Status:</strong></div>
+              <div>
+                {{ selectedQuery.state.status }}
+              </div>
+              <div><strong>Fetch Status:</strong></div>
+              <div>
+                {{ selectedQuery.state.fetchStatus }}
+              </div>
+              <div><strong>Invalidated:</strong></div>
+              <div>
+                {{ selectedQuery.state.isInvalidated }}
+              </div>
+              <div><strong>Update Count:</strong></div>
+              <div>
+                {{ selectedQuery.state.dataUpdateCount }}
+              </div>
+              <div><strong>Active:</strong></div>
+              <div>
+                {{ selectedQuery.observers.length === 0 ? 'Inactive' : 'Active' }}
+              </div>
+              <div><strong>IsStale:</strong></div>
+              <div>
+                {{ toRaw(selectedQuery)?.isStale() }}
+              </div>
+              <div><strong>Disabled:</strong></div>
+              <div>
+                {{ toRaw(selectedQuery)?.isDisabled() }}
+              </div>
+              <div><strong>GCTime:</strong></div>
+              <div>
+                {{ selectedQuery.gcTime }}
+              </div>
+            </div>
           </NSectionBlock>
         </div>
         <div v-else>
