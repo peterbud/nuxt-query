@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@tanstack/vue-query": "^5.66.0"
+    "@tanstack/vue-query": "^5.66.0",
+    "vue-json-pretty": "^2.4.0"
   }
 }

@@ -9,6 +9,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/__nuxt-query-client',
   },
+  css: [
+    'vue-json-pretty/lib/styles.css',
+  ],
   devServer: {
     port: 3300,
   },

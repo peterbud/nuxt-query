@@ -100,7 +100,7 @@ function selectQuery(query: Query) {
       </NNavbar>
 
       <QueryListItem
-        v-for="item in queries"
+        v-for="item in filteredQueries"
         :key="item.queryHash"
         :item="item as Query"
         @click="selectQuery(item as Query)"
@@ -114,7 +114,7 @@ function selectQuery(query: Query) {
           class="w-full"
         >
           <NSectionBlock
-            icon="carbon-moon"
+            icon="carbon-query"
             text="Query Overview"
             :padding="true"
           >
@@ -140,16 +140,20 @@ function selectQuery(query: Query) {
             </div>
           </NSectionBlock>
           <NSectionBlock
-            icon="carbon-settings"
+            icon="carbon-cube"
             text="Data Explorer"
             :padding="true"
+            :open="false"
           >
-            <NCard>
-              TBD
-            </NCard>
+            <VueJsonPretty
+              :data="selectedQuery.state.data"
+              deep="2"
+              virtual="true"
+              height="150"
+            />
           </NSectionBlock>
           <NSectionBlock
-            icon="carbon-settings"
+            icon="carbon-query-queue"
             text="Query Details"
             :padding="true"
           >
