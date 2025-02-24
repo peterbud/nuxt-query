@@ -14,10 +14,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
+
+      - name: 📦 Enable corepack
+        run: |
+          pnpm install -g corepack@latest
+          corepack enable
+
+      - name: 💾 Setup Node.js 20
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
