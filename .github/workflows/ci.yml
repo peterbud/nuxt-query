@@ -17,7 +17,7 @@ jobs:
 
       - name: 📦 Enable corepack
         run: |
-          pnpm install -g corepack@latest
+          npm install -g corepack@latest
           corepack enable
 
       - name: 💾 Setup Node.js 20
