@@ -21,8 +21,8 @@ const selectedUserId = computed(() => selectedUser.value?.id)
 const { isPending, isFetching, isError, data: posts, error } = useQuery({
   queryKey: ['posts', selectedUserId],
   queryFn: () => getPosts(selectedUserId.value),
-  staleTime: 1000 * 10,
-  gcTime: 1000 * 20,
+  staleTime: 1000 * 10, // for 10 seconds it fill be considered as "fresh"
+  gcTime: 1000 * 20, // after 20 seconds it will be garbage collected
   enabled: !selectedUser.value,
 
 })

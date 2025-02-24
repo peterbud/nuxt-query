@@ -2,15 +2,6 @@
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import type { Query, QueryCacheNotifyEvent, QueryClient } from '@tanstack/vue-query'
 
-// function mapQuery(query: Query) {
-//   return {
-//     queryKey: query.queryKey,
-//     queryHash: query.queryHash,
-//     observerCount: query.observers?.length ?? 0,
-//     state: ref(query.state),
-//   }
-// }
-
 const searchString = ref('')
 const queries = ref(new Array<Query>())
 const selectedQuery = ref<Query | null>(null)
@@ -19,16 +10,18 @@ const devtoolsClient = useDevtoolsClient()
 const queryClient = computed(() => devtoolsClient.value?.host?.nuxt.vueApp.config.globalProperties?.$queryClient as QueryClient | undefined)
 const queryCache = computed(() => queryClient.value?.getQueryCache())
 const filteredQueries = computed(() => {
-  if (!queries.value) {
-    return [] as Query[]
-  }
-  return queries.value
+  return !queries.value
+    ? [] as Query[]
+    : !searchString.value
+        ? queries.value
+        : queries.value.filter((query) => {
+            return query.queryKey.toString().toLowerCase().includes(searchString.value.toLowerCase())
+          })
 })
 
 function onQueryNotification(event: QueryCacheNotifyEvent) {
   switch (event.type) {
     case 'updated': {
-      console.log('Query updated', event.query.queryKey)
       const query = queries.value.find(q => q.queryHash === event.query.queryHash)
       if (query) {
         query.state = { ...event.query.state }
@@ -36,16 +29,14 @@ function onQueryNotification(event: QueryCacheNotifyEvent) {
       break
     }
     case 'observerResultsUpdated': {
-      // when data becomes stale, the query is updated
+      // TODO: when data becomes stale, the query is updated
       console.log('Query observerResultsUpdated', event.query.queryKey, event.query.isStale(), event.query.state)
       break
     }
     case 'added':
-      console.log('Query added', event.query.queryKey)
       queries.value.push(event.query)
       break
     case 'removed': {
-      console.log('Query removed', event.query.queryKey)
       const index = queries.value.findIndex(q => q.queryHash === event.query.queryHash)
       if (index !== -1) {
         queries.value.splice(index, 1)
@@ -79,7 +70,6 @@ watchEffect(() => {
 })
 
 function selectQuery(query: Query) {
-  console.log('Selected query', query.queryKey)
   selectedQuery.value = toRaw(query)
 }
 </script>
