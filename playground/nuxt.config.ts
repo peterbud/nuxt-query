@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-02-14',
   nuxtQuery: {
-    autoImports: ['useQuery'],
+    autoImports: ['useQuery', 'useMutation', 'useQueryClient'],
     queryClientOptions: {
       defaultOptions: {
         queries: {

@@ -21,16 +21,14 @@ const filteredQueries = computed(() => {
 
 function onQueryNotification(event: QueryCacheNotifyEvent) {
   switch (event.type) {
+    case 'observerResultsUpdated':
+      // TODO: when data becomes stale/invalidate etc, the query is updated
+      // fall through
     case 'updated': {
       const query = queries.value.find(q => q.queryHash === event.query.queryHash)
       if (query) {
         query.state = { ...event.query.state }
       }
-      break
-    }
-    case 'observerResultsUpdated': {
-      // TODO: when data becomes stale, the query is updated
-      console.log('Query observerResultsUpdated', event.query.queryKey, event.query.isStale(), event.query.state)
       break
     }
     case 'added':
