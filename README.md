@@ -146,13 +146,13 @@ export default defineNuxtPlugin({
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-query/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/nuxt-query
+[npm-version-href]: https://npmjs.com/package/@peterbud/nuxt-query
 
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npm.chart.dev/nuxt-query
+[npm-downloads-href]: https://npm.chart.dev/@peterbud/nuxt-query
 
 [license-src]: https://img.shields.io/npm/l/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/nuxt-query
+[license-href]: https://npmjs.com/package/@peterbud/nuxt-query
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
