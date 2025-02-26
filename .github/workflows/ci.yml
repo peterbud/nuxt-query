@@ -36,7 +36,7 @@ jobs:
         run: pnpm dev:prepare
 
       - name: 🛠 Build project
-        run: pnpm prepack
+        run: pnpm build
 
       - name: 🛝 Build playground
         run: pnpm dev:build
