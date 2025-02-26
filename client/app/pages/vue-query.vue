@@ -191,6 +191,13 @@ function selectQuery(query: Query) {
               <div>
                 {{ selectedQuery.gcTime }}
               </div>
+              <div><strong>Meta:</strong></div>
+              <VueJsonPretty
+                :data="toRaw(selectedQuery)?.meta"
+                deep="2"
+                virtual="true"
+                height="150"
+              />
             </div>
           </NSectionBlock>
         </div>
