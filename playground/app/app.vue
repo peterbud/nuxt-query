@@ -55,7 +55,7 @@ function addNewPost() {
   <div
     :style="{
       display: 'grid',
-      gridTemplateColumns: 'auto auto',
+      gridTemplateColumns: '1fr 1fr',
       gap: '2rem',
     }"
   >
@@ -80,6 +80,7 @@ function addNewPost() {
             backgroundColor: selectedUserId === user.id ? 'blue' : 'white',
             color: selectedUserId === user.id ? 'white' : 'black',
             paddingTop: '0.25rem',
+            borderRadius: '0.125rem',
           }"
           @click="selectUser(user)"
         >

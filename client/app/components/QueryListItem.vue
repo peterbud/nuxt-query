@@ -8,7 +8,21 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid grid-cols-[1fr_auto_auto_auto] gap-2 px-2 text-secondary hover:n-bg-hover truncate">
+  <div
+    class="grid gap-2 px-2 text-secondary hover:n-bg-hover truncate"
+    :style="{
+      'grid-template-columns': '1em 1fr auto auto auto',
+    }"
+  >
+    <div
+      :style="{
+        'width': '1em',
+        'height': '1em',
+        'border-radius': '10%',
+        'align-self': 'center',
+        'background-color': getBackgroundColor(item),
+      }"
+    />
     <div>
       {{ item.queryKey }}
     </div>

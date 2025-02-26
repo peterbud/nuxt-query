@@ -120,6 +120,19 @@ function selectQuery(query: Query) {
                 {{ selectedQuery?.queryHash }}
               </div>
               <div>
+                <strong>Overall status:</strong>
+              </div>
+              <div>
+                <span
+                  class="rounded whitespace-nowrap select-none mx-0.5 px-1.5 py-0.5"
+                  :style="{
+                    'background-color': `${getBackgroundColor(selectedQuery as Query)}`,
+                  }"
+                >
+                  {{ getQueryStatusLabel(selectedQuery as Query) }}
+                </span>
+              </div>
+              <div>
                 <strong>Last Updated:</strong>
               </div>
               <div>
