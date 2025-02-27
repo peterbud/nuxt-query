@@ -22,7 +22,7 @@ const filteredQueries = computed(() => {
 function onQueryNotification(event: QueryCacheNotifyEvent) {
   switch (event.type) {
     case 'observerResultsUpdated':
-      // TODO: when data becomes stale/invalidate etc, the query is updated
+      // When data becomes stale/invalidate etc, the query is updated
       // fall through
     case 'updated': {
       const query = queries.value.find(q => q.queryHash === event.query.queryHash)
@@ -69,6 +69,42 @@ watchEffect(() => {
 
 function selectQuery(query: Query) {
   selectedQuery.value = toRaw(query)
+}
+
+function getQueryOptions(query: Query) {
+  // return all query.options except for the functions
+
+  return Object.entries(query.options).reduce((acc, [key, value]) => {
+    if (typeof value === 'function') {
+      return acc
+    }
+    // exclude queryKey and QueryHash
+    if (key === 'queryKey' || key === 'queryHash') {
+      return acc
+    }
+    acc[key] = value
+    return acc
+  }, {} as Record<string, unknown>)
+}
+
+function handleRestoreTriggerError(query: Query) {
+  if (!query.state.error) {
+    const error = new Error('Unknown error from devtools')
+
+    const __previousQueryOptions = query.options
+
+    query.setState({
+      status: 'error',
+      error,
+      fetchMeta: {
+        ...query.state.fetchMeta,
+        ...__previousQueryOptions,
+      },
+    })
+  }
+  else {
+    query.reset()
+  }
 }
 </script>
 
@@ -131,6 +167,14 @@ function selectQuery(query: Query) {
                 :disabled="selectedQuery.state.status === 'pending'"
                 @click="toRaw(selectedQuery)?.reset()"
               />
+              <NButton
+                v-tooltip="selectedQuery.state.status === 'error' ? 'Restore Error' : 'Trigger Error'"
+                :title="selectedQuery.state.status === 'error' ? 'Restore Error' : 'Trigger Error'"
+                class="text-primary self-start"
+                icon="i-carbon-warning"
+                :disabled="selectedQuery.state.status === 'pending'"
+                @click="handleRestoreTriggerError(toRaw(selectedQuery) as Query)"
+              />
             </template>
             <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
               <div>
@@ -174,9 +218,9 @@ function selectQuery(query: Query) {
           >
             <VueJsonPretty
               :data="selectedQuery.state.data"
-              deep="2"
-              virtual="true"
-              height="150"
+              :deep="2"
+              :virtual="true"
+              :height="150"
             />
           </NSectionBlock>
           <NSectionBlock
@@ -217,12 +261,19 @@ function selectQuery(query: Query) {
               <div>
                 {{ selectedQuery.gcTime }}
               </div>
+              <div><strong>Options:</strong></div>
+              <VueJsonPretty
+                :data="getQueryOptions(selectedQuery as Query)"
+                :deep="2"
+                :virtual="true"
+                :height="150"
+              />
               <div><strong>Meta:</strong></div>
               <VueJsonPretty
                 :data="toRaw(selectedQuery)?.meta"
-                deep="2"
-                virtual="true"
-                height="150"
+                :deep="2"
+                :virtual="true"
+                :height="150"
               />
             </div>
           </NSectionBlock>
