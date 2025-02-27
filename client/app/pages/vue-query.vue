@@ -106,6 +106,32 @@ function selectQuery(query: Query) {
             text="Query Overview"
             :padding="true"
           >
+            <template #actions>
+              <NButton
+                v-tooltip="'Refetch'"
+                title="Refetch"
+                class="text-primary self-start"
+                icon="i-carbon-recycle"
+                :disabled="selectedQuery.state.fetchStatus === 'fetching'"
+                @click="toRaw(selectedQuery)?.fetch()"
+              />
+              <NButton
+                v-tooltip="'Invalidate'"
+                title="Invalidate"
+                class="text-primary self-start"
+                icon="i-carbon-trash-can"
+                :disabled="selectedQuery.state.status === 'pending'"
+                @click="toRaw(selectedQuery)?.invalidate()"
+              />
+              <NButton
+                v-tooltip="'Reset'"
+                title="Reset"
+                class="text-primary self-start"
+                icon="i-carbon-restart"
+                :disabled="selectedQuery.state.status === 'pending'"
+                @click="toRaw(selectedQuery)?.reset()"
+              />
+            </template>
             <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
               <div>
                 <strong>Query Key:</strong>
