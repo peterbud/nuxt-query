@@ -114,6 +114,8 @@ export default defineNuxtPlugin({
 
 Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
 
+![Nuxt DevTools](assets/devtools.png)
+
 ## Contribution
 
 <details>
