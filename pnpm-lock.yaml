@@ -75,6 +75,9 @@ importers:
       '@tanstack/vue-query':
         specifier: ^5.66.0
         version: 5.66.0(vue@3.5.13(typescript@5.7.3))
+      splitpanes:
+        specifier: ^3.1.8
+        version: 3.1.8(vue@3.5.13(typescript@5.7.3))
       vue-json-pretty:
         specifier: ^2.4.0
         version: 2.4.0(vue@3.5.13(typescript@5.7.3))
@@ -10015,6 +10018,10 @@ snapshots:
   splitpanes@3.1.8(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
+
+  splitpanes@3.1.8(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      vue: 3.5.13(typescript@5.7.3)
 
   stable-hash@0.0.4: {}
 

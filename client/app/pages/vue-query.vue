@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import type { Query, QueryCacheNotifyEvent, QueryClient } from '@tanstack/vue-query'
+import 'splitpanes/dist/splitpanes.css'
 
 const searchString = ref('')
 const queries = ref(new Array<Query>())
@@ -117,6 +118,7 @@ function handleRestoreTriggerError(query: Query) {
       <NNavbar
         v-model:search="searchString"
         class="pb2"
+        :style="{ 'border-bottom': '1px solid rgba(128,128,128, 0.8)' }"
       >
         <div class="flex gap-1 text-sm">
           <span op50>{{ queries?.length }} queries in total</span>
@@ -176,7 +178,7 @@ function handleRestoreTriggerError(query: Query) {
                 @click="handleRestoreTriggerError(toRaw(selectedQuery) as Query)"
               />
             </template>
-            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
+            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2">
               <div>
                 <strong>Query Key:</strong>
               </div>
@@ -228,7 +230,7 @@ function handleRestoreTriggerError(query: Query) {
             text="Query Details"
             :padding="true"
           >
-            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2 b-1 b-solid b-gray-200">
+            <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2">
               <div><strong>Status:</strong></div>
               <div>
                 {{ selectedQuery.state.status }}
@@ -285,3 +287,9 @@ function handleRestoreTriggerError(query: Query) {
     </template>
   </NSplitPane>
 </template>
+
+<style>
+.splitpanes__splitter {
+  border-color: rgba(128,128,128, 0.8);
+}
+</style>

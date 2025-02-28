@@ -5,11 +5,9 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt Query is a module for integrating [Vue Query](https://tanstack.com/query/latest/docs/framework/vue/overview) into your Nuxt application, providing a powerful solution for fetching, caching, synchronizing and updating server state.
+Nuxt Query is a module for integrating [Tanstack Query](https://tanstack.com/query/latest/docs/framework/vue/overview) (formerly known as Vue Query) into your Nuxt application, providing a powerful solution for fetching, caching, synchronizing and updating server state.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-query?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
@@ -35,7 +33,7 @@ To configure Nuxt Query, update your `nuxt.config.ts` specifying the options you
 ```typescript
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['nuxt-query'],
+  modules: ['@peterbud/nuxt-query'],
   nuxtQuery: {
     // Specify which Vue Query composable(s) to auto-import
     autoImports: ['useQuery', 'useMutation'],
@@ -112,6 +110,10 @@ export default defineNuxtPlugin({
 })
 ```
 
+## Nuxt DevTools Integration
+
+Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
+
 ## Contribution
 
 <details>
@@ -125,7 +127,7 @@ export default defineNuxtPlugin({
   npm run dev:prepare
   
   # Develop with the playground
-  npm run dev
+  npm run dev:client
   
   # Build the playground
   npm run dev:build
@@ -137,6 +139,9 @@ export default defineNuxtPlugin({
   npm run test
   npm run test:watch
   
+  # Build the module
+  npm run build
+
   # Release new version
   npm run release
   ```
