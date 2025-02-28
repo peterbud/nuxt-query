@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-query",
+  "name": "@peterbud/nuxt-query",
   "version": "0.0.1",
   "description": "Nuxt integration for Tanstack Query",
   "repository": {
