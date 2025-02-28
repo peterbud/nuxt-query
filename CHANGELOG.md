@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.3...v0.0.4)
+
+### 🚀 Enhancements
+
+- Add restore and loading triggers function to DevTools actions ([2d9c8ff](https://github.com/peterbud/nuxt-query/commit/2d9c8ff))
+- Handle updates in observers ([17b667c](https://github.com/peterbud/nuxt-query/commit/17b667c))
+
+### 📖 Documentation
+
+- Update README to reflect correct package name ([ca8a5d6](https://github.com/peterbud/nuxt-query/commit/ca8a5d6))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.1...v0.0.3)
