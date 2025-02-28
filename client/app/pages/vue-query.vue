@@ -25,6 +25,10 @@ function onQueryNotification(event: QueryCacheNotifyEvent) {
     case 'observerResultsUpdated':
       // When data becomes stale/invalidate etc, the query is updated
       // fall through
+    case 'observerAdded':
+      // fall through
+    case 'observerRemoved':
+      // fall through
     case 'updated': {
       const query = queries.value.find(q => q.queryHash === event.query.queryHash)
       if (query) {
@@ -45,8 +49,8 @@ function onQueryNotification(event: QueryCacheNotifyEvent) {
       }
       break
     }
-    default:
-      console.log('Unknown event', event.type)
+    case 'observerOptionsUpdated':
+      // TODO
       break
   }
 }
@@ -246,10 +250,10 @@ function handleRestoreTriggerLoading(query: Query) {
                 {{ selectedQuery?.queryKey }}
               </div>
               <div>
-                <strong>Query Hash:</strong>
+                <strong>Observers:</strong>
               </div>
               <div>
-                {{ selectedQuery?.queryHash }}
+                {{ selectedQuery.observers.length }}
               </div>
               <div>
                 <strong>Overall status:</strong>
