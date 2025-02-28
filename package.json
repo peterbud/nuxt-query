@@ -2,6 +2,9 @@
   "name": "@peterbud/nuxt-query",
   "version": "0.0.2",
   "description": "Nuxt integration for Tanstack Query",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peterbud/nuxt-query.git"
