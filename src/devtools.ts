@@ -37,8 +37,7 @@ export function setupDevToolsUI(nuxt: Nuxt, resolver: Resolver) {
   addCustomTab({
     name: 'nuxt-query',
     title: 'Nuxt Query',
-    icon: 'carbon:apps',
-    // iframe view
+    icon: 'carbon:palm-tree',
     view: {
       type: 'iframe',
       src: `${DEVTOOLS_UI_ROUTE}/vue-query`,

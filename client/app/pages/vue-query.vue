@@ -99,12 +99,65 @@ function handleRestoreTriggerError(query: Query) {
       error,
       fetchMeta: {
         ...query.state.fetchMeta,
-        ...__previousQueryOptions,
-      },
+        __previousQueryOptions,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any,
     })
   }
   else {
     query.reset()
+    // reset() does NOT seem to refetch, even when the query IS active (has observers)
+    // maybe a bug?
+    // do it manually
+    query.fetch()
+  }
+}
+
+function restoreQueryAfterLoadingOrError(query: Query) {
+  const previousState = query.state
+  const previousOptions = query.state.fetchMeta
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ? (query.state.fetchMeta as any).__previousQueryOptions
+    : null
+
+  query.cancel({ silent: true })
+  query.setState({
+    ...previousState,
+    fetchStatus: 'idle',
+    fetchMeta: null,
+  })
+
+  if (previousOptions) {
+    query.fetch(previousOptions)
+  }
+}
+
+function handleRestoreTriggerLoading(query: Query) {
+  if (query.state.data === undefined) {
+    restoreQueryAfterLoadingOrError(query)
+  }
+  else {
+    if (!query) return
+    const __previousQueryOptions = query.options
+    // Trigger a fetch in order to trigger suspense as well.
+    query.fetch({
+      ...__previousQueryOptions,
+      queryFn: () => {
+        return new Promise(() => {
+          // Never resolve
+        })
+      },
+      gcTime: -1,
+    })
+    query.setState({
+      data: undefined,
+      status: 'pending',
+      fetchMeta: {
+        ...query.state.fetchMeta,
+        __previousQueryOptions,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any,
+    })
   }
 }
 </script>
@@ -168,6 +221,13 @@ function handleRestoreTriggerError(query: Query) {
                 icon="i-carbon-restart"
                 :disabled="selectedQuery.state.status === 'pending'"
                 @click="toRaw(selectedQuery)?.reset()"
+              />
+              <NButton
+                v-tooltip="selectedQuery.state.status === 'pending' ? 'Restore Loading' : 'Trigger Loading'"
+                :title="selectedQuery.state.status === 'pending' ? 'Restore Loading' : 'Trigger Loading'"
+                class="text-primary self-start"
+                icon="i-carbon-hourglass"
+                @click="handleRestoreTriggerLoading(toRaw(selectedQuery) as Query)"
               />
               <NButton
                 v-tooltip="selectedQuery.state.status === 'error' ? 'Restore Error' : 'Trigger Error'"
