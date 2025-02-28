@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Rename package to @peterbud/nuxt-query ([9d00f5c](https://github.com/peterbud/nuxt-query/commit/9d00f5c))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.1
 
 
