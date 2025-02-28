@@ -23,7 +23,13 @@ Nuxt Query is a module for integrating [Tanstack Query](https://tanstack.com/que
 You can add the module via the Nuxt CLI:
 
 ```bash
-npx nuxi module add nuxt-query
+npx nuxi module add @peterbud/nuxt-query
+```
+
+or via npm:
+
+```bash
+pnpm dlx nuxi module add @peterbud/nuxt-query
 ```
 
 ## Configuration
@@ -152,13 +158,13 @@ Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Quer
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-query/latest.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-version-src]: https://img.shields.io/npm/v/@peterbud/nuxt-query/latest.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-version-href]: https://npmjs.com/package/@peterbud/nuxt-query
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-downloads-src]: https://img.shields.io/npm/dm/@peterbud/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-downloads-href]: https://npm.chart.dev/@peterbud/nuxt-query
 
-[license-src]: https://img.shields.io/npm/l/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
+[license-src]: https://img.shields.io/npm/l/@peterbud/nuxt-query.svg?style=flat&colorA=020420&colorB=00DC82
 [license-href]: https://npmjs.com/package/@peterbud/nuxt-query
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
