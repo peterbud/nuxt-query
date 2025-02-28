@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.1...v0.0.3)
+
+### 🚀 Enhancements
+
+- Rename package to @peterbud/nuxt-query ([9d00f5c](https://github.com/peterbud/nuxt-query/commit/9d00f5c))
+- Add publishConfig for public access in package.json ([6835619](https://github.com/peterbud/nuxt-query/commit/6835619))
+
+### 🏡 Chore
+
+- **release:** V0.0.2 ([06a2fce](https://github.com/peterbud/nuxt-query/commit/06a2fce))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.2
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.1...v0.0.2)
