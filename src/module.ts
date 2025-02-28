@@ -2,6 +2,7 @@ import { defineNuxtModule, addImports, addPlugin, createResolver, useLogger } fr
 import { defu } from 'defu'
 import type { QueryClient, QueryClientConfig } from '@tanstack/vue-query'
 import type { HookResult } from '@nuxt/schema'
+import { version } from '../package.json'
 import { setupDevToolsUI } from './devtools'
 
 const _composables = [
@@ -49,6 +50,7 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-query',
     configKey: 'nuxtQuery',
+    version,
   },
 
   // Default configuration options of the Nuxt module

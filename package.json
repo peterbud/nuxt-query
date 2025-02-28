@@ -1,7 +1,7 @@
 {
   "name": "nuxt-query",
   "version": "0.0.0",
-  "description": "Nuxt integration for Tanstack Vue Query",
+  "description": "Nuxt integration for Tanstack Query",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peterbud/nuxt-query.git"
@@ -15,6 +15,15 @@
       "import": "./dist/module.mjs"
     }
   },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "query",
+    "nuxt-module",
+    "tanstack",
+    "tanstack-query",
+    "vue-query"
+  ],
   "main": "./dist/module.mjs",
   "typesVersions": {
     "*": {
