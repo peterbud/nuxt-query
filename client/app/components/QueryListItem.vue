@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div
-    class="grid gap-2 px-2 text-secondary hover:n-bg-hover truncate"
+    class="grid gap-2 px-2 text-secondary hover:n-bg-hover truncate max-w-full"
     :style="{
       'grid-template-columns': '1em 1fr auto auto auto',
     }"
@@ -23,7 +23,9 @@ defineProps<{
         'background-color': getBackgroundColor(item),
       }"
     />
-    <div>
+    <div
+      class="truncate"
+    >
       {{ item.queryKey }}
     </div>
     <div class="text-right">
