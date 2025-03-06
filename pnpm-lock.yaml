@@ -76,8 +76,8 @@ importers:
         specifier: ^5.66.0
         version: 5.67.1(vue@3.5.13(typescript@5.8.2))
       splitpanes:
-        specifier: ^3.1.8
-        version: 3.1.8(vue@3.5.13(typescript@5.8.2))
+        specifier: ^4.0.0
+        version: 4.0.0(vue@3.5.13(typescript@5.8.2))
       vue-json-pretty:
         specifier: ^2.4.0
         version: 2.4.0(vue@3.5.13(typescript@5.8.2))
@@ -4097,8 +4097,13 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  splitpanes@3.1.8:
-    resolution: {integrity: sha512-iYir0doakV9gYBfCuflGCxCD5Yhh09OGgT+epjfc6LZfTvGDdMXuD0Q4w6jI3hlkdRR1Ta3DlARcV3MOkybymg==}
+  splitpanes@3.2.0:
+    resolution: {integrity: sha512-K+WKxWdqtKShV33gPjQl769wHxB3glypTOReCvYu/AJd38J+abHlpiF8rK6uBNPMrgw5thHZCI5JkEwsAqa9XA==}
+    peerDependencies:
+      vue: ^3.2.0
+
+  splitpanes@4.0.0:
+    resolution: {integrity: sha512-jQZHekeS6D7KwIuFm9OijRkA0teJGGV8HWEjtQHGqn+25sXLpMpYI9EBxb/eTt0yQMjb8qxiexvQyDQ5KJht3A==}
     peerDependencies:
       vue: ^3.2.0
 
@@ -4228,8 +4233,8 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
-  terser-webpack-plugin@5.3.13:
-    resolution: {integrity: sha512-JG3pBixF6kx2o0Yfz2K6pqh72DpwTI08nooHd06tcj5WyIt5SsSiUYqRT+kemrGUNSuSzVhwfZ28aO8gogajNQ==}
+  terser-webpack-plugin@5.3.14:
+    resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       '@swc/core': '*'
@@ -5598,7 +5603,7 @@ snapshots:
       '@vueuse/nuxt': 12.8.2(magicast@0.3.5)(nuxt@3.15.4(@parcel/watcher@2.5.1)(@types/node@22.13.9)(db0@0.2.4)(eslint@9.21.0(jiti@2.4.2))(ioredis@5.5.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.34.9)(terser@5.39.0)(tsx@4.19.2)(typescript@5.8.2)(vite@6.2.0(@types/node@22.13.9)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.8(typescript@5.8.2))(yaml@2.7.0))(typescript@5.8.2)
       defu: 6.1.4
       focus-trap: 7.6.4
-      splitpanes: 3.1.8(vue@3.5.13(typescript@5.8.2))
+      splitpanes: 3.2.0(vue@3.5.13(typescript@5.8.2))
       unocss: 66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.0(@types/node@22.13.9)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       v-lazy-show: 0.3.0(@vue/compiler-core@3.5.13)
     transitivePeerDependencies:
@@ -9638,7 +9643,11 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  splitpanes@3.1.8(vue@3.5.13(typescript@5.8.2)):
+  splitpanes@3.2.0(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      vue: 3.5.13(typescript@5.8.2)
+
+  splitpanes@4.0.0(vue@3.5.13(typescript@5.8.2)):
     dependencies:
       vue: 3.5.13(typescript@5.8.2)
 
@@ -9776,7 +9785,7 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  terser-webpack-plugin@5.3.13(webpack@5.98.0):
+  terser-webpack-plugin@5.3.14(webpack@5.98.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -10452,7 +10461,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.13(webpack@5.98.0)
+      terser-webpack-plugin: 5.3.14(webpack@5.98.0)
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
