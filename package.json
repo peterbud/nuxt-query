@@ -67,7 +67,7 @@
     "@nuxt/test-utils": "^3.17.1",
     "@types/node": "latest",
     "@unocss/nuxt": "^66.0.0",
-    "changelogen": "^0.5.7",
+    "changelogen": "^0.6.1",
     "concurrently": "^9.1.2",
     "eslint": "^9.21.0",
     "nuxt": "^3.15.4",
