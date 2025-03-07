@@ -83,8 +83,11 @@ function getQueryOptions(query: Query) {
     if (typeof value === 'function') {
       return acc
     }
-    // exclude queryKey and QueryHash
-    if (key === 'queryKey' || key === 'queryHash') {
+    // exclude queryKey, queryHash, and meta
+    if (key === 'queryKey'
+      || key === 'queryHash'
+      || key === 'meta'
+      || key.startsWith('_')) {
       return acc
     }
     acc[key] = value
