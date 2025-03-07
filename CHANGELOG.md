@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Add truncation to query key in QueryListItem ([6eb9c87](https://github.com/peterbud/nuxt-query/commit/6eb9c87))
+- Change package ecosystem for Dependabot ([06175fa](https://github.com/peterbud/nuxt-query/commit/06175fa))
+- Exclude 'meta' and private keys from query options ([7ca86de](https://github.com/peterbud/nuxt-query/commit/7ca86de))
+- Update build script to include preparation step ([321b709](https://github.com/peterbud/nuxt-query/commit/321b709))
+
+### 📦 Build
+
+- **deps-dev:** Bump @unocss/nuxt from 65.5.0 to 66.0.0 ([77a0342](https://github.com/peterbud/nuxt-query/commit/77a0342))
+- **deps-dev:** Bump vitest from 3.0.7 to 3.0.8 ([57dc06d](https://github.com/peterbud/nuxt-query/commit/57dc06d))
+- **deps:** Bump splitpanes from 3.1.8 to 4.0.0 ([36062b5](https://github.com/peterbud/nuxt-query/commit/36062b5))
+- **deps-dev:** Bump changelogen from 0.5.7 to 0.6.1 ([9a412ab](https://github.com/peterbud/nuxt-query/commit/9a412ab))
+
+### 🏡 Chore
+
+- Update dependencies to latest versions ([edd5f89](https://github.com/peterbud/nuxt-query/commit/edd5f89))
+- Add Dependabot configuration for weekly updates ([50bdf23](https://github.com/peterbud/nuxt-query/commit/50bdf23))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.3...v0.0.4)
