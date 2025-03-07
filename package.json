@@ -39,7 +39,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-module-build build && pnpm build:client",
+    "build": "nuxt-module-build prepare && nuxt-module-build build && pnpm build:client",
     "build:client": "nuxi generate client",
     "dev": "nuxi dev playground",
     "dev:client": "concurrently \"nuxi dev client --port 3300\" \"nuxi dev playground\"",
