@@ -1,4 +1,4 @@
-import { defineNuxtModule, addImports, addPlugin, createResolver, useLogger } from '@nuxt/kit'
+import { defineNuxtModule, addImports, addPlugin, createResolver } from '@nuxt/kit'
 import { defu } from 'defu'
 import type { QueryClient, QueryClientConfig } from '@tanstack/vue-query'
 import type { HookResult } from '@nuxt/schema'
@@ -60,10 +60,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
 
   setup(options, nuxt) {
-    const logger = useLogger('nuxt-query')
-
-    logger.info(`Adding nuxt-query module`)
-
     // Expose relevant runtime config to public
     nuxt.options.runtimeConfig.public.nuxtQuery = defu(
       nuxt.options.runtimeConfig.public.nuxtQuery,
@@ -80,7 +76,5 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (options.devtools)
       setupDevToolsUI(nuxt, resolver)
-
-    logger.success(`Added nuxt-query module successfully.`)
   },
 })
