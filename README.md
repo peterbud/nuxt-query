@@ -156,6 +156,7 @@ Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Quer
 
 </details>
 
+If you want to report a bug, please make sure you have a minimal reproduction of the issue. You can use the [minimal example](https://stackblitz.com/github/peterbud/nuxt-query/tree/main/examples/minimal?title=Nuxt-Query%20Minimal%20Example) to create a reproduction.
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@peterbud/nuxt-query/latest.svg?style=flat&colorA=020420&colorB=00DC82
