@@ -1,6 +1,47 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Add minimal Nuxt example with nuxt-query ([bdfcbe3](https://github.com/peterbud/nuxt-query/commit/bdfcbe3))
+
+### 💅 Refactors
+
+- Remove logging from nuxt-query module setup ([cd29782](https://github.com/peterbud/nuxt-query/commit/cd29782))
+
+### 📖 Documentation
+
+- Add guidance for reporting bugs with minimal reproduction examples ([7015063](https://github.com/peterbud/nuxt-query/commit/7015063))
+
+### 📦 Build
+
+- **deps:** Bump splitpanes from 4.0.0 to 4.0.2 ([543fd4e](https://github.com/peterbud/nuxt-query/commit/543fd4e))
+- **deps-dev:** Bump @nuxt/eslint-config from 1.1.0 to 1.2.0 ([4fb04f0](https://github.com/peterbud/nuxt-query/commit/4fb04f0))
+- **deps-dev:** Bump @nuxt/test-utils from 3.17.1 to 3.17.2 ([26581e3](https://github.com/peterbud/nuxt-query/commit/26581e3))
+- **deps:** Bump @tanstack/vue-query from 5.67.1 to 5.67.2 ([9c0efc1](https://github.com/peterbud/nuxt-query/commit/9c0efc1))
+- **deps-dev:** Bump eslint from 9.21.0 to 9.22.0 ([52659af](https://github.com/peterbud/nuxt-query/commit/52659af))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([b40c9f6](https://github.com/peterbud/nuxt-query/commit/b40c9f6))
+- **deps:** Bump the prod-deps group across 1 directory with 3 updates ([a1937f7](https://github.com/peterbud/nuxt-query/commit/a1937f7))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([933d9a3](https://github.com/peterbud/nuxt-query/commit/933d9a3))
+- **deps:** Bump the prod-deps group with 2 updates ([9aa1568](https://github.com/peterbud/nuxt-query/commit/9aa1568))
+- **deps-dev:** Bump the dev-deps group with 5 updates ([93e90ca](https://github.com/peterbud/nuxt-query/commit/93e90ca))
+- **deps:** Bump the prod-deps group with 4 updates ([8c06ce4](https://github.com/peterbud/nuxt-query/commit/8c06ce4))
+- **deps:** Bump the prod-deps group with 3 updates ([c450488](https://github.com/peterbud/nuxt-query/commit/c450488))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 3 updates ([a705673](https://github.com/peterbud/nuxt-query/commit/a705673))
+
+### 🏡 Chore
+
+- **ci:** Add dependabot dependency groups for actions, dev, and prod ([432833a](https://github.com/peterbud/nuxt-query/commit/432833a))
+- Dedupe ([4f4e202](https://github.com/peterbud/nuxt-query/commit/4f4e202))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.4...v0.0.5)
