@@ -3,9 +3,13 @@ const getUsers = async () => {
   return await $fetch('https://jsonplaceholder.typicode.com/users')
 }
 
-const { isPending: isPending, data: users } = useQuery({
+const { isPending: isPending, data: users, suspense } = useQuery({
   queryKey: ['users'],
   queryFn: getUsers,
+})
+
+onServerPrefetch(async () => {
+  await suspense()
 })
 </script>
 

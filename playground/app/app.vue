@@ -12,7 +12,7 @@ const getPosts = async (userId) => {
   return await $fetch(url, { method: 'GET', params: { userId } })
 }
 
-const { isPending: isUsersPending, data: users } = useQuery({
+const { isPending: isUsersPending, data: users, suspense } = useQuery({
   queryKey: ['users'],
   queryFn: getUsers,
 })
@@ -40,6 +40,10 @@ const { mutate: addPost, isPending: isMutationPending } = useMutation({
   onSuccess: () => {
     queryClient.invalidateQueries({ queryKey: ['posts', selectedUserId] })
   },
+})
+
+onServerPrefetch(async () => {
+  await suspense()
 })
 
 function selectUser(user) {
