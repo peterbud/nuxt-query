@@ -20,7 +20,7 @@ defineProps<{
         'height': '1em',
         'border-radius': '10%',
         'align-self': 'center',
-        'background-color': getBackgroundColor(item),
+        'background-color': getQueryBackgroundColor(item),
       }"
     />
     <div

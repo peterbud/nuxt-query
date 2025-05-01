@@ -24,7 +24,7 @@ const { isPending, isFetching, isError, data: posts, error } = useQuery({
   queryFn: () => getPosts(selectedUserId.value),
   staleTime: 1000 * 10, // for 10 seconds it will be considered as "fresh"
   gcTime: 1000 * 20, // after 20 seconds it will be garbage collected
-  enabled: computed(() => selectedUser.value !== null),
+  enabled: computed(() => !!selectedUser.value),
   meta: {
     title: 'Posts',
     id: selectedUserId,
