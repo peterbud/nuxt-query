@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.6...v0.1.1)
+
+### 🚀 Enhancements
+
+- Add suspense handling to examples ([8ab82dc](https://github.com/peterbud/nuxt-query/commit/8ab82dc))
+- Add MutationCache base ([a2aa6e5](https://github.com/peterbud/nuxt-query/commit/a2aa6e5))
+- Update MutationListItem styling and enhance mutation details display ([d61c1af](https://github.com/peterbud/nuxt-query/commit/d61c1af))
+
+### 📦 Build
+
+- **deps-dev:** Bump nuxt from 3.16.1 to 3.16.2 in the dev-deps group ([94000a6](https://github.com/peterbud/nuxt-query/commit/94000a6))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([288bc7a](https://github.com/peterbud/nuxt-query/commit/288bc7a))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([02b4a2b](https://github.com/peterbud/nuxt-query/commit/02b4a2b))
+- **deps:** Bump the prod-deps group with 3 updates ([e45b5ad](https://github.com/peterbud/nuxt-query/commit/e45b5ad))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([3b51520](https://github.com/peterbud/nuxt-query/commit/3b51520))
+- **deps-dev:** Bump the dev-deps group with 3 updates ([e34a9c2](https://github.com/peterbud/nuxt-query/commit/e34a9c2))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([04ef4ee](https://github.com/peterbud/nuxt-query/commit/04ef4ee))
+- **deps:** Bump the prod-deps group with 2 updates ([53e0e44](https://github.com/peterbud/nuxt-query/commit/53e0e44))
+
+### 🏡 Chore
+
+- Update dependencies ([a22aa0a](https://github.com/peterbud/nuxt-query/commit/a22aa0a))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.5...v0.0.6)
