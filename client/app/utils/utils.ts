@@ -35,9 +35,9 @@ export function getMutationStatusLabel(mutation: Mutation) {
 
 export function getMutationBackgroundColor(mutation: Mutation) {
   const { status } = mutation.state
-  if (mutation.state.isPaused) return 'Paused'
-  if (status === 'error') return 'rgba(255, 0, 0, 0.2)'
-  if (status === 'pending') return 'rgba(255, 161, 0, 0.2)'
-  if (status === 'success') return 'rgba(0, 255, 0, 0.2)'
-  return 'rgba(0, 0, 0, 0.1)'
+  if (mutation.state.isPaused) return 'purple'
+  if (status === 'error') return 'red'
+  if (status === 'pending') return 'yellow'
+  if (status === 'success') return 'green'
+  return 'gray'
 }

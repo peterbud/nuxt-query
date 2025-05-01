@@ -10,21 +10,23 @@ defineEmits(['click'])
 
 <template>
   <div
-    class="flex flex-col p-2 overflow-hidden hover-bg-active cursor-pointer border-b border-gray-100 dark:border-gray-800"
+    class="grid gap-2 px-2 text-secondary hover:n-bg-hover cursor-pointer truncate max-w-full"
+    :style="{
+      'grid-template-columns': '1em 1fr',
+    }"
     @click="$emit('click')"
   >
-    <div class="flex items-center gap-2">
-      <span
-        class="rounded whitespace-nowrap select-none mx-0.5 px-1.5 py-0.5"
-        :style="{
-          'background-color': `${getMutationBackgroundColor(item)}`,
-        }"
-      >
-        {{ getMutationStatusLabel(item) }}
-      </span>
-      <div class="truncate font-mono text-sm opacity-75">
-        {{ item.options.mutationKey || 'Anonymous' }}
-      </div>
+    <div
+      :style="{
+        'width': '1em',
+        'height': '1em',
+        'border-radius': '10%',
+        'align-self': 'center',
+        'background-color': getMutationBackgroundColor(item),
+      }"
+    />
+    <div>
+      {{ item.options.mutationKey || 'No mutation key provided' }}
     </div>
   </div>
 </template>

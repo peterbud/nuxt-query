@@ -466,7 +466,7 @@ function handleRestoreTriggerLoading(query: Query) {
             class="w-full"
           >
             <NSectionBlock
-              icon="carbon-mutation"
+              icon="carbon-status-change"
               text="Mutation Overview"
               :padding="true"
             >
@@ -490,6 +490,71 @@ function handleRestoreTriggerLoading(query: Query) {
                     {{ getMutationStatusLabel(selectedMutation as Mutation) }}
                   </span>
                 </div>
+                <div>
+                  <strong>Submitted:</strong>
+                </div>
+                <div>
+                  {{ new Date(selectedMutation.state.submittedAt).toLocaleString() }}
+                </div>
+              </div>
+            </NSectionBlock>
+            <NSectionBlock
+              icon="carbon-cube"
+              text="Data Explorer"
+              :padding="true"
+              :open="false"
+            >
+              <VueJsonPretty
+                :data="selectedMutation.state.data"
+                :deep="2"
+                :virtual="true"
+                :height="150"
+              />
+            </NSectionBlock>
+            <NSectionBlock
+              icon="carbon-query-queue"
+              text="Mutation Details"
+              :padding="true"
+            >
+              <div class="grid grid-cols-[auto_1fr] gap-1 px-2 py-2">
+                <div><strong>Status:</strong></div>
+                <div>
+                  {{ selectedMutation.state.status }}
+                </div>
+                <div><strong>Mutation Id:</strong></div>
+                <div>
+                  {{ selectedMutation.mutationId }}
+                </div>
+                <div><strong>IsPaused:</strong></div>
+                <div>
+                  {{ selectedMutation.state.isPaused }}
+                </div>
+                <div><strong>Failure Count:</strong></div>
+                <div>
+                  {{ selectedMutation.state.failureCount }}
+                </div>
+                <div><strong>Failure Reason:</strong></div>
+                <div>
+                  {{ selectedMutation.state.failureReason }}
+                </div>
+                <div><strong>GCTime:</strong></div>
+                <div>
+                  {{ selectedMutation.gcTime }}
+                </div>
+                <div><strong>Variables:</strong></div>
+                <VueJsonPretty
+                  :data="toRaw(selectedMutation)?.state?.variables"
+                  :deep="2"
+                  :virtual="true"
+                  :height="150"
+                />
+                <div><strong>Meta:</strong></div>
+                <VueJsonPretty
+                  :data="toRaw(selectedMutation)?.meta"
+                  :deep="2"
+                  :virtual="true"
+                  :height="150"
+                />
               </div>
             </NSectionBlock>
           </div>

@@ -33,6 +33,7 @@ const { isPending, isFetching, isError, data: posts, error } = useQuery({
 })
 
 const { mutate: addPost, isPending: isMutationPending } = useMutation({
+  mutationKey: ['addPost'],
   mutationFn: async (post) => {
     const url = 'https://jsonplaceholder.typicode.com/posts'
     return await $fetch(url, { method: 'POST', body: post })
