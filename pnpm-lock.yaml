@@ -19,7 +19,7 @@ importers:
         version: 3.17.4(magicast@0.3.5)
       '@tanstack/vue-query':
         specifier: ^5.71.10
-        version: 5.77.2(vue@3.5.15(typescript@5.8.3))
+        version: 5.79.2(vue@3.5.15(typescript@5.8.3))
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -74,7 +74,7 @@ importers:
     dependencies:
       '@tanstack/vue-query':
         specifier: ^5.66.0
-        version: 5.77.2(vue@3.5.15(typescript@5.8.3))
+        version: 5.79.2(vue@3.5.15(typescript@5.8.3))
       splitpanes:
         specifier: ^4.0.0
         version: 4.0.4(vue@3.5.15(typescript@5.8.3))
@@ -1491,11 +1491,11 @@ packages:
     resolution: {integrity: sha512-Wo1iKt2b9OT7d+YGhvEPD3DXvPv2etTusIMhMUoG7fbhmxcXCtIjJDEygy91Y2JFlwGyjqiBPRozme7UD8hoqg==}
     engines: {node: '>=12'}
 
-  '@tanstack/query-core@5.77.2':
-    resolution: {integrity: sha512-1lqJwPsR6GX6nZFw06erRt518O19tWU6Q+x0fJUygl4lxHCYF2nhzBPwLKk2NPjYOrpR0K567hxPc5K++xDe9Q==}
+  '@tanstack/query-core@5.79.2':
+    resolution: {integrity: sha512-kr+KQrBuqd6495eP9S41BoftFI1H50XA9O+6FmbnTx/Te6bjiq1mj8rt9rJjW3YZSO2aaUNUres0TWesJW1j1g==}
 
-  '@tanstack/vue-query@5.77.2':
-    resolution: {integrity: sha512-Neon9wds87Wo6T5qr+YxOnHYmt618IGnlYE2r6dpWDvhb/mJwlvoBw9TS2KzLfmOQuadBc4nWcpUomuDR4otKg==}
+  '@tanstack/vue-query@5.79.2':
+    resolution: {integrity: sha512-eJ7pIt+E3+IYhSWoIj1HSYeG3ABka/n63/aD6ZfTm5bAKVxyll43OET+UXp2GTC0C1U3dNDbky/D2Lac6xMfxQ==}
     peerDependencies:
       '@vue/composition-api': ^1.1.2
       vue: ^2.6.0 || ^3.3.0
@@ -7190,12 +7190,12 @@ snapshots:
     dependencies:
       remove-accents: 0.5.0
 
-  '@tanstack/query-core@5.77.2': {}
+  '@tanstack/query-core@5.79.2': {}
 
-  '@tanstack/vue-query@5.77.2(vue@3.5.15(typescript@5.8.3))':
+  '@tanstack/vue-query@5.79.2(vue@3.5.15(typescript@5.8.3))':
     dependencies:
       '@tanstack/match-sorter-utils': 8.19.4
-      '@tanstack/query-core': 5.77.2
+      '@tanstack/query-core': 5.79.2
       '@vue/devtools-api': 6.6.4
       vue: 3.5.15(typescript@5.8.3)
       vue-demi: 0.14.10(vue@3.5.15(typescript@5.8.3))
