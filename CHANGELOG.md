@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.1.1...v0.1.2)
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 6 updates ([961c2b0](https://github.com/peterbud/nuxt-query/commit/961c2b0))
+- **deps:** Bump the prod-deps group with 2 updates ([a35b8d9](https://github.com/peterbud/nuxt-query/commit/a35b8d9))
+- **deps-dev:** Bump the dev-deps group with 5 updates ([7cc66d8](https://github.com/peterbud/nuxt-query/commit/7cc66d8))
+- **deps:** Bump the prod-deps group across 1 directory with 4 updates ([366d5e6](https://github.com/peterbud/nuxt-query/commit/366d5e6))
+- **deps-dev:** Bump the dev-deps group with 7 updates ([4bcb834](https://github.com/peterbud/nuxt-query/commit/4bcb834))
+- **deps-dev:** Bump the dev-deps group with 5 updates ([7cb38e9](https://github.com/peterbud/nuxt-query/commit/7cb38e9))
+- **deps:** Bump the prod-deps group with 3 updates ([1ecfdb7](https://github.com/peterbud/nuxt-query/commit/1ecfdb7))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([4c79428](https://github.com/peterbud/nuxt-query/commit/4c79428))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([bcd4b78](https://github.com/peterbud/nuxt-query/commit/bcd4b78))
+
+### 🏡 Chore
+
+- **examples:** Update dependencies ([4bffca3](https://github.com/peterbud/nuxt-query/commit/4bffca3))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.1.1
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.0.6...v0.1.1)
