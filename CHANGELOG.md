@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v0.1.2...v1.0.0)
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 3 updates ([6bb0bdb](https://github.com/peterbud/nuxt-query/commit/6bb0bdb))
+- **deps:** Bump the prod-deps group with 2 updates ([fdbea7b](https://github.com/peterbud/nuxt-query/commit/fdbea7b))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([8521a85](https://github.com/peterbud/nuxt-query/commit/8521a85))
+- **deps:** Bump the prod-deps group with 3 updates ([e324bc3](https://github.com/peterbud/nuxt-query/commit/e324bc3))
+
+### 🏡 Chore
+
+- Update dependencies ([d920e74](https://github.com/peterbud/nuxt-query/commit/d920e74))
+- Update dependencies ([5663a82](https://github.com/peterbud/nuxt-query/commit/5663a82))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v0.1.2
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.1.1...v0.1.2)
