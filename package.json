@@ -60,7 +60,7 @@
     "sirv": "^3.0.1"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^2.5.0",
+    "@nuxt/devtools": "^2.6.2",
     "@nuxt/eslint-config": "^1.4.1",
     "@nuxt/module-builder": "1.0.1",
     "@nuxt/schema": "^3.17.5",
@@ -75,5 +75,5 @@
     "vitest": "^3.2.3",
     "vue-tsc": "^2.2.10"
   },
-  "packageManager": "pnpm@10.2.0"
+  "packageManager": "pnpm@10.12.4"
 }
