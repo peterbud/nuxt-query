@@ -66,14 +66,14 @@
     "@nuxt/schema": "^3.17.5",
     "@nuxt/test-utils": "^3.19.1",
     "@types/node": "latest",
-    "@unocss/nuxt": "66.3.2",
+    "@unocss/nuxt": "66.3.3",
     "changelogen": "^0.6.1",
     "concurrently": "^9.1.2",
     "eslint": "^9.29.0",
     "nuxt": "^3.17.5",
     "typescript": "~5.8.3",
     "vitest": "^3.2.3",
-    "vue-tsc": "^2.2.10"
+    "vue-tsc": "^3.0.1"
   },
   "packageManager": "pnpm@10.12.4"
 }
