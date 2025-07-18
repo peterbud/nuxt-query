@@ -17,7 +17,7 @@ const _composables = [
 type VueQueryComposables = typeof _composables[number]
 
 export interface ModuleOptions {
-  autoImports: VueQueryComposables[] | false
+  autoImports: VueQueryComposables[] | boolean
   devtools: boolean
   queryClientOptions: QueryClientConfig | undefined
 }
@@ -71,8 +71,17 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolver.resolve('./runtime/plugin'))
 
     // Auto imports tanstack composables
-    if (options.autoImports && options.autoImports.length > 0)
-      addImports(options.autoImports.map(name => ({ name, from: '@tanstack/vue-query' })))
+    let importComposables = new Set<VueQueryComposables>(_composables)
+    if (typeof options.autoImports === 'boolean') {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      !options.autoImports && importComposables.clear()
+    }
+    else {
+      importComposables = importComposables.intersection(new Set(options.autoImports))
+    }
+    addImports([...importComposables.values()].map(name => (
+      { name, from: '@tanstack/vue-query' }
+    )))
 
     if (options.devtools)
       setupDevToolsUI(nuxt, resolver)

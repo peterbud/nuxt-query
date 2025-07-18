@@ -41,16 +41,22 @@ To configure Nuxt Query, update your `nuxt.config.ts` specifying the options you
 export default defineNuxtConfig({
   modules: ['@peterbud/nuxt-query'],
   nuxtQuery: {
-    // Specify which Vue Query composable(s) to auto-import
+    /**
+     * Specify which Vue Query composable(s) to auto-import
+     * Default to `false`, set to `true` to auto-import all Vue Query composables
+     */
     autoImports: ['useQuery', 'useMutation'],
 
     // Enable / disable Nuxt DevTools integration (default: true).
     devtools: true,
 
-    // These are the same options as the QueryClient 
-    // from @tanstack/vue-query, will be passed 
-    // to the QueryClient constructor
-    // More details: https://tanstack.com/query/v5/docs/reference/QueryClient
+    /**
+     * These are the same options as the QueryClient 
+     * from @tanstack/vue-query, which will be passed 
+     * to the QueryClient constructor
+     * More details: https://tanstack.com/query/v5/docs/reference/QueryClient
+     */
+    
     queryClientOptions: {
       defaultOptions: {
         queries: {
