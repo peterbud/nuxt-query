@@ -77,7 +77,7 @@ export default defineNuxtModule<ModuleOptions>({
       !options.autoImports && importComposables.clear()
     }
     else {
-      importComposables = importComposables.intersection(new Set(options.autoImports))
+      importComposables = new Set(options.autoImports)
     }
     addImports([...importComposables.values()].map(name => (
       { name, from: '@tanstack/vue-query' }
