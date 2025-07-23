@@ -54,7 +54,7 @@
   "dependencies": {
     "@nuxt/devtools-kit": "^2.5.0",
     "@nuxt/devtools-ui-kit": "^2.5.0",
-    "@nuxt/kit": "^3.17.5",
+    "@nuxt/kit": "^4.0.1",
     "@tanstack/vue-query": "^5.80.7",
     "defu": "^6.1.4",
     "sirv": "^3.0.1"
