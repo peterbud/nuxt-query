@@ -1,6 +1,46 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.0.0...v1.1.0)
+
+### 🚀 Enhancements
+
+- Support boolean for autoImports option and update docs ([57ad5a1](https://github.com/peterbud/nuxt-query/commit/57ad5a1))
+
+### 💅 Refactors
+
+- Remove redundant intersection check for autoImports option ([5589b2a](https://github.com/peterbud/nuxt-query/commit/5589b2a))
+
+### 📖 Documentation
+
+- Update README for clarity and add new images ([caa9299](https://github.com/peterbud/nuxt-query/commit/caa9299))
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 8 updates ([bc90018](https://github.com/peterbud/nuxt-query/commit/bc90018))
+- **deps:** Bump the prod-deps group across 1 directory with 4 updates ([2d9ac89](https://github.com/peterbud/nuxt-query/commit/2d9ac89))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([6fd6c2f](https://github.com/peterbud/nuxt-query/commit/6fd6c2f))
+- **deps:** Bump the prod-deps group with 2 updates ([ba2efe7](https://github.com/peterbud/nuxt-query/commit/ba2efe7))
+- **deps:** Bump @nuxt/kit from 3.17.7 to 4.0.1 in the prod-deps group ([056b86d](https://github.com/peterbud/nuxt-query/commit/056b86d))
+- **deps-dev:** Bump nuxt in the dev-deps group across 1 directory ([3a21214](https://github.com/peterbud/nuxt-query/commit/3a21214))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([5cf7ab4](https://github.com/peterbud/nuxt-query/commit/5cf7ab4))
+- **deps-dev:** Bump the dev-deps group with 6 updates ([ba0e18d](https://github.com/peterbud/nuxt-query/commit/ba0e18d))
+- **deps:** Bump actions/checkout from 4 to 5 in the actions-deps group ([f39308c](https://github.com/peterbud/nuxt-query/commit/f39308c))
+- **deps-dev:** Bump the dev-deps group with 6 updates ([cf68a9d](https://github.com/peterbud/nuxt-query/commit/cf68a9d))
+
+### 🏡 Chore
+
+- **release:** V1.0.0 ([d597dcf](https://github.com/peterbud/nuxt-query/commit/d597dcf))
+- Update dependencies in the minimal example ([286e5d5](https://github.com/peterbud/nuxt-query/commit/286e5d5))
+- Update dependencies ([be300db](https://github.com/peterbud/nuxt-query/commit/be300db))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+- Howard Guo ([@toto6038](https://github.com/toto6038))
+
 ## v1.0.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v0.1.2...v1.0.0)
