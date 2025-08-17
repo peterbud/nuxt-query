@@ -5,18 +5,18 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt Query is a module for integrating [Tanstack Query](https://tanstack.com/query/latest/docs/framework/vue/overview) (formerly known as Vue Query) into your Nuxt application, providing a powerful solution for fetching, caching, synchronizing and updating server state.
+A powerful Nuxt module for integrating [TanStack Query](https://tanstack.com/query/latest/docs/framework/vue/overview) (formerly Vue Query) into your Nuxt application. Provides robust server state management with intelligent caching, background updates, and seamless data synchronization.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
+- [🏀 &nbsp;Online playground](https://stackblitz.com/github/peterbud/nuxt-query/tree/main/examples/minimal)
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⚙️ &nbsp; 0 config integration
-- 💪 &nbsp; Full support of Vue Query config settings
-- 🏆 &nbsp; Support for complex `QueryClient` setup with handlers via hooks
+- ⚙️ &nbsp; Zero-configuration integration
+- 💪 &nbsp; Full TypeScript support with Vue Query configuration
+- 🏆 &nbsp; Advanced `QueryClient` setup with custom handlers via hooks
 - 🤖 &nbsp; Configurable auto-imports for Vue Query composables
-- 🧩 &nbsp; Nuxt DevTools integration for easy debugging
+- 🧩 &nbsp; Nuxt DevTools integration for debugging and inspection
 
 ## Installation
 
@@ -29,7 +29,7 @@ npx nuxi module add @peterbud/nuxt-query
 or via npm:
 
 ```bash
-pnpm dlx nuxi module add @peterbud/nuxt-query
+npm install @peterbud/nuxt-query
 ```
 
 ## Configuration
@@ -42,12 +42,12 @@ export default defineNuxtConfig({
   modules: ['@peterbud/nuxt-query'],
   nuxtQuery: {
     /**
-     * Specify which Vue Query composable(s) to auto-import
-     * Default to `false`, set to `true` to auto-import all Vue Query composables
+     * Specify which Vue Query composables to auto-import
+     * Default: `false`, set to `true` to auto-import all Vue Query composables
      */
     autoImports: ['useQuery', 'useMutation'],
 
-    // Enable / disable Nuxt DevTools integration (default: true).
+    // Enable/disable Nuxt DevTools integration (default: true)
     devtools: true,
 
     /**
@@ -93,7 +93,7 @@ That's it! You can now use Nuxt Query in your Nuxt app ✨
 
 ## Module Hooks
 
-Nuxt Query provides a hook that you can use in your application if you need a more complex setup for Vue Query, like custom query client with centralized `onSuccess` or `onError` handlers, which would not be possible to configure with the options available in the `nuxt.config.ts`.
+Nuxt Query provides a hook that you can use in your application if you need a more complex setup for TanStack Query, such as a custom query client with centralized `onSuccess` or `onError` handlers, which would not be possible to configure with the options available in the `nuxt.config.ts`.
 
 The hook is called `nuxt-query:configure` and you can use it in a plugin to return a custom `QueryClient` object in the following way:
 
@@ -127,6 +127,10 @@ export default defineNuxtPlugin({
 Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
 
 ![Nuxt DevTools](assets/devtools.png)
+
+Also, you can inspect your mutation cache using the same DevTools in a convenient way.
+
+![Mutation Cache](assets/mutationcache.png)
 
 ## Contribution
 
