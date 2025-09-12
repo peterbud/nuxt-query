@@ -1,3 +1,4 @@
 packages:
   - playground
   - client
+  - examples/minimal
