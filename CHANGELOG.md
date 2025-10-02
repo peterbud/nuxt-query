@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.1.0...v1.2.0)
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 2 updates ([90b50f4](https://github.com/peterbud/nuxt-query/commit/90b50f4))
+- **deps:** Bump the prod-deps group with 2 updates ([4757a4d](https://github.com/peterbud/nuxt-query/commit/4757a4d))
+- **deps:** Bump the prod-deps group with 2 updates ([521080a](https://github.com/peterbud/nuxt-query/commit/521080a))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([b4a082b](https://github.com/peterbud/nuxt-query/commit/b4a082b))
+- **deps-dev:** Bump @unocss/nuxt in the dev-deps group ([8cae3e8](https://github.com/peterbud/nuxt-query/commit/8cae3e8))
+- **deps:** Bump actions/setup-node in the actions-deps group ([1ba9409](https://github.com/peterbud/nuxt-query/commit/1ba9409))
+- **deps:** Bump the prod-deps group with 3 updates ([bf2cbc0](https://github.com/peterbud/nuxt-query/commit/bf2cbc0))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([aa3d0fc](https://github.com/peterbud/nuxt-query/commit/aa3d0fc))
+- **deps:** Bump the prod-deps group across 1 directory with 5 updates ([9976515](https://github.com/peterbud/nuxt-query/commit/9976515))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 3 updates ([dad77ef](https://github.com/peterbud/nuxt-query/commit/dad77ef))
+- **deps:** Bump the prod-deps group with 2 updates ([8e00ea3](https://github.com/peterbud/nuxt-query/commit/8e00ea3))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 3 updates ([5abc6e4](https://github.com/peterbud/nuxt-query/commit/5abc6e4))
+- Update package manager to pnpm@10.17.1 ([a2b4199](https://github.com/peterbud/nuxt-query/commit/a2b4199))
+
+### 🏡 Chore
+
+- **release:** V1.1.0 ([e57d1b0](https://github.com/peterbud/nuxt-query/commit/e57d1b0))
+- Update dependencies ([33b309d](https://github.com/peterbud/nuxt-query/commit/33b309d))
+- Update dependencies ([0cc30b2](https://github.com/peterbud/nuxt-query/commit/0cc30b2))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v1.0.0...v1.1.0)
