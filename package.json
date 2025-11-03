@@ -61,7 +61,7 @@
     "sirv": "^3.0.2"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^2.6.3",
+    "@nuxt/devtools": "^3.0.1",
     "@nuxt/eslint-config": "^1.9.0",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "^4.1.1",
