@@ -52,8 +52,8 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/devtools-kit": "^2.6.3",
-    "@nuxt/devtools-ui-kit": "^2.6.3",
+    "@nuxt/devtools-kit": "^3.0.1",
+    "@nuxt/devtools-ui-kit": "^3.0.1",
     "@nuxt/kit": "^4.1.1",
     "@tanstack/vue-query": "^5.87.4",
     "defu": "^6.1.4",
