@@ -1,6 +1,38 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.2.0...v1.2.1)
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 5 updates ([f498b55](https://github.com/peterbud/nuxt-query/commit/f498b55))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([1b857ea](https://github.com/peterbud/nuxt-query/commit/1b857ea))
+- **deps:** Bump the prod-deps group across 1 directory with 3 updates ([2de91d7](https://github.com/peterbud/nuxt-query/commit/2de91d7))
+- **deps:** Bump the prod-deps group with 2 updates ([137a3df](https://github.com/peterbud/nuxt-query/commit/137a3df))
+- **deps:** Bump actions/setup-node in the actions-deps group ([84018f9](https://github.com/peterbud/nuxt-query/commit/84018f9))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 2 updates ([86ef351](https://github.com/peterbud/nuxt-query/commit/86ef351))
+- **deps-dev:** Bump the dev-deps group with 6 updates ([a9885bb](https://github.com/peterbud/nuxt-query/commit/a9885bb))
+- **deps:** Bump the prod-deps group with 4 updates ([abfd702](https://github.com/peterbud/nuxt-query/commit/abfd702))
+- **deps:** Bump the prod-deps group with 4 updates ([d3f651f](https://github.com/peterbud/nuxt-query/commit/d3f651f))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 5 updates ([494584a](https://github.com/peterbud/nuxt-query/commit/494584a))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([cd16508](https://github.com/peterbud/nuxt-query/commit/cd16508))
+- **deps:** Bump the prod-deps group with 6 updates ([e3ef5e3](https://github.com/peterbud/nuxt-query/commit/e3ef5e3))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([ef97572](https://github.com/peterbud/nuxt-query/commit/ef97572))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([a5399d3](https://github.com/peterbud/nuxt-query/commit/a5399d3))
+- **deps:** Bump actions/checkout from 5 to 6 in the actions-deps group ([4a86c65](https://github.com/peterbud/nuxt-query/commit/4a86c65))
+- **deps:** Bump vue from 3.5.24 to 3.5.25 in the prod-deps group ([6d67c72](https://github.com/peterbud/nuxt-query/commit/6d67c72))
+- **deps-dev:** Bump the dev-deps group with 3 updates ([b821c25](https://github.com/peterbud/nuxt-query/commit/b821c25))
+
+### 🏡 Chore
+
+- Update dependencies in example ([ac31e7e](https://github.com/peterbud/nuxt-query/commit/ac31e7e))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v1.1.0...v1.2.0)
