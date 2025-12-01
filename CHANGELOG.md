@@ -1,7 +1,7 @@
 # Changelog
 
 
-## v1.2.1
+## v1.3.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v1.2.0...v1.2.1)
 
