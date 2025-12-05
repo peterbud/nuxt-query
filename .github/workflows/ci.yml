@@ -23,10 +23,10 @@ jobs:
           npm install -g --force corepack@latest
           corepack enable
 
-      - name: 💾 Setup Node.js 20
+      - name: 💾 Setup Node.js 24
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
 
       - name: 📦 Install dependencies
