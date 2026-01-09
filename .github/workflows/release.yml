@@ -13,7 +13,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
     timeout-minutes: 20
     steps:
@@ -22,10 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: 📦 Enable corepack
-        run: |
-          npm install -g --force corepack@latest
-          npm install -g npm@latest
-          corepack enable
+        run: corepack enable
 
       - name: 💾 Setup Node.js 24
         uses: actions/setup-node@v6
