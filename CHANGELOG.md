@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v1.4.0
+
+1.4.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.3.0...v1.4.0)
+
+### 📦 Build
+
+- **deps-dev:** Bump the dev-deps group with 3 updates ([d6ee009](https://github.com/peterbud/nuxt-query/commit/d6ee009))
+- **deps:** Bump the prod-deps group with 3 updates ([23f2a61](https://github.com/peterbud/nuxt-query/commit/23f2a61))
+- **ci:** Update Node.js version to 24 in CI workflow ([2936339](https://github.com/peterbud/nuxt-query/commit/2936339))
+- Add release workflow for versioned tag deployments ([be39454](https://github.com/peterbud/nuxt-query/commit/be39454))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([91f6794](https://github.com/peterbud/nuxt-query/commit/91f6794))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([8139aaf](https://github.com/peterbud/nuxt-query/commit/8139aaf))
+- **deps-dev:** Bump the dev-deps group with 5 updates ([ba69350](https://github.com/peterbud/nuxt-query/commit/ba69350))
+- **deps:** Bump the prod-deps group with 3 updates ([6958d9e](https://github.com/peterbud/nuxt-query/commit/6958d9e))
+- **deps:** Bump vue from 3.5.25 to 3.5.26 in the prod-deps group ([ba7b55b](https://github.com/peterbud/nuxt-query/commit/ba7b55b))
+- **deps-dev:** Bump the dev-deps group across 1 directory with 2 updates ([2002aaf](https://github.com/peterbud/nuxt-query/commit/2002aaf))
+- **deps-dev:** Bump @unocss/nuxt in the dev-deps group ([bd77e4a](https://github.com/peterbud/nuxt-query/commit/bd77e4a))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([cf3473e](https://github.com/peterbud/nuxt-query/commit/cf3473e))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([a6f7330](https://github.com/peterbud/nuxt-query/commit/a6f7330))
+- **deps:** Bump @tanstack/vue-query in the prod-deps group ([705f832](https://github.com/peterbud/nuxt-query/commit/705f832))
+
+### 🏡 Chore
+
+- Update dependencies ([ae8c9c9](https://github.com/peterbud/nuxt-query/commit/ae8c9c9))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.3.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v1.2.0...v1.2.1)
