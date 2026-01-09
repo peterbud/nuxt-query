@@ -52,29 +52,29 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/devtools-kit": "^3.0.1",
-    "@nuxt/devtools-ui-kit": "^3.0.1",
-    "@nuxt/kit": "^4.1.1",
-    "@tanstack/vue-query": "^5.87.4",
+    "@nuxt/devtools-kit": "^3.1.1",
+    "@nuxt/devtools-ui-kit": "^3.1.1",
+    "@nuxt/kit": "^4.2.2",
+    "@tanstack/vue-query": "^5.92.5",
     "defu": "^6.1.4",
     "pkg-types": "^2.3.0",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.0.1",
-    "@nuxt/eslint-config": "^1.9.0",
+    "@nuxt/devtools": "^3.1.1",
+    "@nuxt/eslint-config": "^1.12.1",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "^4.1.1",
-    "@nuxt/test-utils": "^3.19.2",
+    "@nuxt/schema": "^4.2.2",
+    "@nuxt/test-utils": "^3.23.0",
     "@types/node": "latest",
     "@unocss/nuxt": "66.5.12",
     "changelogen": "^0.6.2",
     "concurrently": "^9.2.1",
-    "eslint": "^9.35.0",
-    "nuxt": "^4.1.1",
-    "typescript": "~5.9.2",
-    "vitest": "^4.0.4",
-    "vue-tsc": "^3.0.7"
+    "eslint": "^9.39.2",
+    "nuxt": "^4.2.2",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.16",
+    "vue-tsc": "^3.2.2"
   },
-  "packageManager": "pnpm@10.17.1"
+  "packageManager": "pnpm@10.27.0"
 }
