@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v1.5.0
+
+1.5.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.4.0...v1.5.0)
+
+### 📦 Build
+
+- Update permissions for release job and simplify corepack setup ([ec9fea6](https://github.com/peterbud/nuxt-query/commit/ec9fea6))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([0f4cb67](https://github.com/peterbud/nuxt-query/commit/0f4cb67))
+- **deps-dev:** Bump the dev-deps group with 2 updates ([ce5c079](https://github.com/peterbud/nuxt-query/commit/ce5c079))
+- **deps:** Bump the prod-deps group with 2 updates ([7f43441](https://github.com/peterbud/nuxt-query/commit/7f43441))
+- **deps:** Bump lodash-es from 4.17.22 to 4.17.23 ([f3abf94](https://github.com/peterbud/nuxt-query/commit/f3abf94))
+- **deps-dev:** Bump the dev-deps group with 4 updates ([244ed6f](https://github.com/peterbud/nuxt-query/commit/244ed6f))
+- **deps:** Bump the prod-deps group with 3 updates ([4df6d30](https://github.com/peterbud/nuxt-query/commit/4df6d30))
+
+### 🏡 Chore
+
+- Implement pnpm catalog ([ed6cf2f](https://github.com/peterbud/nuxt-query/commit/ed6cf2f))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.4.0
 
 1.4.0 is the next minor release.
