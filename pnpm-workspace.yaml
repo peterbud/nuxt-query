@@ -2,3 +2,43 @@ packages:
   - playground
   - client
   - examples/minimal
+
+catalog:
+  # Framework
+  nuxt: ^4.2.2
+  vue: ^3.5.26
+  vue-router: ^4.6.4
+  
+  # TanStack Query
+  "@tanstack/vue-query": ^5.92.5
+  
+  # Nuxt Devtools
+  "@nuxt/devtools": ^3.1.1
+  "@nuxt/devtools-kit": ^3.1.1
+  "@nuxt/devtools-ui-kit": ^3.1.1
+  splitpanes: ^4.0.4
+  "vue-json-pretty": ^2.5.0
+  
+  # Nuxt Tooling
+  "@nuxt/kit": ^4.2.2
+  "@nuxt/schema": ^4.2.2
+  "@nuxt/module-builder": 1.0.2
+  "@nuxt/test-utils": ^3.23.0
+  
+  # Build & Dev Tools
+  typescript: ~5.9.3
+  vue-tsc: ^3.2.2
+  vitest: ^4.0.16
+  eslint: ^9.39.2
+  "@nuxt/eslint-config": ^1.12.1
+  concurrently: ^9.2.1
+  changelogen: ^0.6.2
+  "@unocss/nuxt": 66.6.0
+  
+  # Utilities
+  defu: ^6.1.4
+  "pkg-types": ^2.3.0
+  sirv: ^3.0.2
+  
+  # Types
+  "@types/node": latest
