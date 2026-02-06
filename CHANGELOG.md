@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.1
+
+1.5.1 is a republish to fix catalog references.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.5.0...v1.5.1)
+
+### 📦 Build
+
+- **deps:** Bump the prod-deps group with 4 updates ([072101c](https://github.com/peterbud/nuxt-query/commit/072101c))
 
 ## v1.5.0
 

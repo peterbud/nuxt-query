@@ -1,6 +1,6 @@
 {
   "name": "@peterbud/nuxt-query",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Nuxt integration for Tanstack Query",
   "publishConfig": {
     "access": "public"
