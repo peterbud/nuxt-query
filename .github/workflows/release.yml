@@ -41,5 +41,8 @@ jobs:
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
+      - name: 🏗️ Build production bundle
+        run: pnpm run build
+
       - name: 📦 Release
         run: pnpm publish --access public --no-git-checks
