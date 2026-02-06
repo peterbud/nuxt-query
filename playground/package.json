@@ -8,6 +8,6 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "nuxt": "catalog:"
+    "nuxt": "^4.2.2"
   }
 }
