@@ -8,9 +8,9 @@ catalog:
   '@nuxt/devtools-kit': 3.1.1
   '@nuxt/devtools-ui-kit': 3.1.1
   '@nuxt/eslint-config': ^1.15.1
-  '@nuxt/kit': ^4.3.1
+  '@nuxt/kit': 4.3.0
   '@nuxt/module-builder': 1.0.2
-  '@nuxt/schema': ^4.3.1
+  '@nuxt/schema': 4.3.0
   '@nuxt/test-utils': ^4.0.0
   '@tanstack/vue-query': ^5.92.9
   '@types/node': ^25.2.3
@@ -19,7 +19,7 @@ catalog:
   concurrently: ^9.2.1
   defu: ^6.1.4
   eslint: ^9.39.2
-  nuxt: ^4.3.1
+  nuxt: 4.3.0
   pkg-types: ^2.3.0
   sirv: ^3.0.2
   splitpanes: ^4.0.4
