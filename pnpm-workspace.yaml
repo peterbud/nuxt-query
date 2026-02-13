@@ -23,13 +23,13 @@ catalog:
   "@nuxt/kit": ^4.2.2
   "@nuxt/schema": ^4.2.2
   "@nuxt/module-builder": 1.0.2
-  "@nuxt/test-utils": ^3.23.0
+  "@nuxt/test-utils": ^4.0.0
   
   # Build & Dev Tools
   typescript: ~5.9.3
   vue-tsc: ^3.2.2
   vitest: ^4.0.16
-  eslint: ^9.39.2
+  eslint: ^10.0.0
   "@nuxt/eslint-config": ^1.12.1
   concurrently: ^9.2.1
   changelogen: ^0.6.2
