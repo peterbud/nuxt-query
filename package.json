@@ -76,5 +76,8 @@
     "vitest": "catalog:",
     "vue-tsc": "catalog:"
   },
-  "packageManager": "pnpm@10.27.0"
+  "packageManager": "pnpm@10.30.3",
+  "overrides": {
+    "tar": "^7.5.10"
+  }
 }
