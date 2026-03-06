@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.6.0
+
+1.5.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.5.2...v1.6.0)
+
+### 🩹 Fixes
+
+- Revert pnpm-lock.yaml to working state ([2a6108c](https://github.com/peterbud/nuxt-query/commit/2a6108c))
+
+### 🏡 Chore
+
+- Update dependencies ([575a8ac](https://github.com/peterbud/nuxt-query/commit/575a8ac))
+- Update dependencies ([74f6e72](https://github.com/peterbud/nuxt-query/commit/74f6e72))
+- Update dependencies ([801ae1a](https://github.com/peterbud/nuxt-query/commit/801ae1a))
+- Update dependencies ([5ad57f7](https://github.com/peterbud/nuxt-query/commit/5ad57f7))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.5.2
 
 1.5.2 is a republish to fix catalog references.
