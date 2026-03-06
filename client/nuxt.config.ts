@@ -23,4 +23,5 @@ export default defineNuxtConfig({
       publicDir: resolver.resolve('../dist/client'),
     },
   },
+  unocss: {},
 })
