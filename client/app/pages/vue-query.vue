@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import type { Query, QueryCacheNotifyEvent, QueryClient, Mutation, MutationCacheNotifyEvent } from '@tanstack/vue-query'
+import {
+  getMutationBackgroundColor,
+  getMutationStatusLabel,
+  getQueryBackgroundColor,
+  getQueryStatusLabel,
+  sortMutations,
+  sortQueries,
+} from '../utils/utils'
+import type { SortDirection, SortField } from '../utils/utils'
 import 'splitpanes/dist/splitpanes.css'
 
 const activeView = ref('query') // 'query' or 'mutation'
@@ -10,28 +19,36 @@ const selectedQuery = ref<Query | null>(null)
 const mutations = ref(new Array<Mutation>())
 const selectedMutation = ref<Mutation | null>(null)
 const mutationSearchString = ref('')
+const querySortField = ref<SortField>('key')
+const querySortDirection = ref<SortDirection>('asc')
+const mutationSortField = ref<SortField>('key')
+const mutationSortDirection = ref<SortDirection>('asc')
 
 const devtoolsClient = useDevtoolsClient()
 const queryClient = computed(() => devtoolsClient.value?.host?.nuxt.vueApp.config.globalProperties?.$queryClient as QueryClient | undefined)
 const queryCache = computed(() => queryClient.value?.getQueryCache())
 const mutationCache = computed(() => queryClient.value?.getMutationCache())
 const filteredQueries = computed(() => {
-  return !queries.value
+  const filtered = !queries.value
     ? [] as Query[]
     : !searchString.value
         ? queries.value
         : queries.value.filter((query) => {
             return query.queryKey.toString().toLowerCase().includes(searchString.value.toLowerCase())
           })
+
+  return sortQueries(filtered as unknown as Query[], querySortField.value, querySortDirection.value)
 })
 const filteredMutations = computed(() => {
-  return !mutations.value
+  const filtered = !mutations.value
     ? [] as Mutation[]
     : !mutationSearchString.value
         ? mutations.value
         : mutations.value.filter((mutation) => {
             return mutation.options.mutationKey?.toString().toLowerCase().includes(mutationSearchString.value.toLowerCase())
           })
+
+  return sortMutations(filtered as unknown as Mutation[], mutationSortField.value, mutationSortDirection.value)
 })
 
 function onQueryNotification(event: QueryCacheNotifyEvent) {
@@ -265,15 +282,16 @@ function handleRestoreTriggerLoading(query: Query) {
       class="h-full"
     >
       <template #left>
-        <NNavbar
-          v-model:search="searchString"
-          class="pb2"
-          :style="{ 'border-bottom': '1px solid rgba(128,128,128, 0.8)' }"
-        >
-          <div class="flex gap-1 text-sm">
-            <span op50>{{ queries?.length }} queries in total</span>
-          </div>
-        </NNavbar>
+        <FilterSortControls
+          :search="searchString"
+          item-label="queries"
+          :total-count="queries?.length || 0"
+          :sort-field="querySortField"
+          :sort-direction="querySortDirection"
+          @update:search="searchString = $event"
+          @update:sort-field="querySortField = $event"
+          @update:sort-direction="querySortDirection = $event"
+        />
 
         <QueryListItem
           v-for="item in filteredQueries"
@@ -450,15 +468,16 @@ function handleRestoreTriggerLoading(query: Query) {
       class="h-full"
     >
       <template #left>
-        <NNavbar
-          v-model:search="mutationSearchString"
-          class="pb2"
-          :style="{ 'border-bottom': '1px solid rgba(128,128,128, 0.8)' }"
-        >
-          <div class="flex gap-1 text-sm">
-            <span op50>{{ mutations?.length }} mutations in total</span>
-          </div>
-        </NNavbar>
+        <FilterSortControls
+          :search="mutationSearchString"
+          item-label="mutations"
+          :total-count="mutations?.length || 0"
+          :sort-field="mutationSortField"
+          :sort-direction="mutationSortDirection"
+          @update:search="mutationSearchString = $event"
+          @update:sort-field="mutationSortField = $event"
+          @update:sort-direction="mutationSortDirection = $event"
+        />
 
         <MutationListItem
           v-for="item in filteredMutations"
