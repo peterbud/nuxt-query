@@ -250,6 +250,15 @@ function handleRestoreTriggerLoading(query: Query) {
       </NButton>
     </div>
 
+    <QueryCacheSummary
+      v-if="activeView === 'query'"
+      :queries="queries as unknown as Query[]"
+    />
+    <MutationCacheSummary
+      v-else
+      :mutations="mutations as unknown as Mutation[]"
+    />
+
     <NSplitPane
       v-if="activeView === 'query'"
       storage-key="tab-vue-query"
