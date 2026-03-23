@@ -26,14 +26,14 @@ catalog:
   "@nuxt/test-utils": ^4.0.0
   
   # Build & Dev Tools
-  typescript: ~5.9.3
+  typescript: ~6.0.2
   vue-tsc: ^3.2.5
   vitest: ^4.0.16
   eslint: ^10.0.2
   "@nuxt/eslint-config": ^1.15.2
   concurrently: ^9.2.1
   changelogen: ^0.6.2
-  "@unocss/nuxt": 66.6.6
+  "@unocss/nuxt": 66.6.7
   
   # Utilities
   defu: ^6.1.4
