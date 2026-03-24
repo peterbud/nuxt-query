@@ -13,9 +13,9 @@ catalog:
   "@tanstack/vue-query": ^5.92.5
   
   # Nuxt Devtools
-  "@nuxt/devtools": ^3.2.2
-  "@nuxt/devtools-kit": ^3.2.2
-  "@nuxt/devtools-ui-kit": ^3.2.2
+  "@nuxt/devtools": 4.0.0-alpha.3
+  "@nuxt/devtools-kit": 4.0.0-alpha.3
+  "@nuxt/devtools-ui-kit": 4.0.0-alpha.3
   splitpanes: ^4.0.4
   "vue-json-pretty": ^2.5.0
   
