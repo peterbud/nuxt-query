@@ -31,8 +31,8 @@ export default defineNuxtConfig({
         '@tanstack/vue-query',
         'vue-json-pretty',
         '@nuxt/devtools-kit/iframe-client',
-      ]
-    }
+      ],
+    },
   },
   unocss: {},
 })
