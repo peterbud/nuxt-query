@@ -1,0 +1,13 @@
+diff --git a/dist/components/NSectionBlock.vue b/dist/components/NSectionBlock.vue
+index ed92a0b585ffcd32ab2f4be6ce25a05995212a5c..c90629e416fe6836dd4188eafa11c564e58c1621 100644
+--- a/dist/components/NSectionBlock.vue
++++ b/dist/components/NSectionBlock.vue
+@@ -48,7 +48,7 @@ function onToggle(e) {
+       </NIconTitle>
+     </summary>
+     <div
+-      v-lazy-show="open"
++      v-show="open"
+       class="flex flex-col flex-gap2 pb6 pt2"
+       :class="typeof padding === 'string' ? padding : padding ? 'px4' : ''"
+     >
