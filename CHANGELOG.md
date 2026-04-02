@@ -1,5 +1,36 @@
 # Changelog
 
+## v1.7.0
+
+1.7.0 is the next minor release.
+
+Added query and mutation cache summary in devtools, plus filter and sorting for queries and mutations.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.6.0...v1.7.0)
+
+### 🚀 Enhancements
+
+- Add query and mutation cache summary to devtools ([aee0a08](https://github.com/peterbud/nuxt-query/commit/aee0a08))
+- Add filter sorting for queries and mutations ([5685f2c](https://github.com/peterbud/nuxt-query/commit/5685f2c))
+- Add new screenshots ([5e4b0e4](https://github.com/peterbud/nuxt-query/commit/5e4b0e4))
+
+### 📦 Build
+
+- **deps:** Bump the prod-deps group with 8 updates ([c9c48bb](https://github.com/peterbud/nuxt-query/commit/c9c48bb))
+- **deps:** Bump the prod-deps group with 10 updates ([#139](https://github.com/peterbud/nuxt-query/pull/139))
+- Disable peer auto install ([c2f9a79](https://github.com/peterbud/nuxt-query/commit/c2f9a79))
+
+### 🏡 Chore
+
+- Add MIT License ([650c449](https://github.com/peterbud/nuxt-query/commit/650c449))
+- Remove override ([4359f23](https://github.com/peterbud/nuxt-query/commit/4359f23))
+- Update dependencies ([#138](https://github.com/peterbud/nuxt-query/pull/138))
+- Add cooldown settings for dependency updates ([49a41fe](https://github.com/peterbud/nuxt-query/commit/49a41fe))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.6.0
 
 1.5.0 is the next minor release.
