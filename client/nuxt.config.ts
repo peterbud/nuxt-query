@@ -15,11 +15,11 @@ export default defineNuxtConfig({
   devServer: {
     port: 3300,
   },
-  experimental: {
-    viteEnvironmentApi: true,
-  },
   future: {
     compatibilityVersion: 4,
+  },
+  experimental: {
+    viteEnvironmentApi: true,
   },
   nitro: {
     output: {
