@@ -12,7 +12,7 @@ catalog:
   "@nuxt/module-builder": 1.0.2
   "@nuxt/schema": ^4.4.4
   "@nuxt/test-utils": ^4.0.3
-  "@tanstack/vue-query": ^5.100.9
+  "@tanstack/vue-query": ^5.100.7
   "@types/node": latest
   "@unocss/nuxt": 66.6.8
   changelogen: ^0.6.2
