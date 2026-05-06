@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.8.0
+
+1.8.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.7.0...v1.8.0)
+
+### 📦 Build
+
+- **deps:** Bump the prod-deps group across 1 directory with 11 updates ([#143](https://github.com/peterbud/nuxt-query/pull/143))
+- **deps:** Bump actions/setup-node in the actions-deps group ([#144](https://github.com/peterbud/nuxt-query/pull/144))
+- **deps:** Bump actions/setup-node in the actions-deps group ([#146](https://github.com/peterbud/nuxt-query/pull/146))
+
+### 🏡 Chore
+
+- Update dependencies ([8a0ec00](https://github.com/peterbud/nuxt-query/commit/8a0ec00))
+- Fix linting ([9e2e0d4](https://github.com/peterbud/nuxt-query/commit/9e2e0d4))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.7.0
 
 1.7.0 is the next minor release.
