@@ -13,7 +13,7 @@ catalog:
   "@nuxt/schema": ^4.4.6
   "@nuxt/test-utils": ^4.0.3
   "@tanstack/vue-query": ^5.100.11
-  "@types/node": latest
+  "@types/node": ^25.9.1
   "@unocss/nuxt": 66.7.0
   changelogen: ^0.6.2
   concurrently: ^9.2.1
