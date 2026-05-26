@@ -3,6 +3,12 @@ packages:
   - client
   - examples/minimal
 
+allowBuilds:
+  "@parcel/watcher": false
+  esbuild: false
+  unrs-resolver: false
+  vue-demi: false
+
 catalog:
   "@nuxt/devtools": ^3.2.4
   "@nuxt/devtools-kit": ^3.2.4
