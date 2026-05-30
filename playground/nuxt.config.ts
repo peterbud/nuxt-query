@@ -17,4 +17,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@tanstack/vue-query',
+      ]
+    }
+  }
 })
