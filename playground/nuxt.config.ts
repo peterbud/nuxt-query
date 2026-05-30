@@ -7,6 +7,13 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: '2025-02-14',
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@tanstack/vue-query',
+      ],
+    },
+  },
   nuxtQuery: {
     autoImports: ['useQuery', 'useMutation', 'useQueryClient'],
     queryClientOptions: {
@@ -17,11 +24,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  vite: {
-    optimizeDeps: {
-      include: [
-        '@tanstack/vue-query',
-      ]
-    }
-  }
 })
