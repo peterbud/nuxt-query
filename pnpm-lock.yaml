@@ -69,15 +69,9 @@ catalogs:
     vitest:
       specifier: ^4.1.8
       version: 4.1.8
-    vue:
-      specifier: ^3.5.26
-      version: 3.5.35
     vue-json-pretty:
       specifier: ^2.5.0
       version: 2.6.0
-    vue-router:
-      specifier: ^5.0.2
-      version: 5.1.0
     vue-tsc:
       specifier: ^3.3.3
       version: 3.3.3
@@ -172,13 +166,13 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0(1cd8d5713c67c9c03d96e17824152ae4)
       nuxt:
-        specifier: 'catalog:'
+        specifier: ^4.4.7
         version: 4.4.7(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@babel/plugin-syntax-typescript@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@25.9.1)(@vue/compiler-sfc@3.5.35)(cac@6.7.14)(db0@0.3.4)(eslint@10.4.1(jiti@2.7.0))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.15)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.15)(rollup@4.60.3))(rollup@4.60.3)(terser@5.46.0)(typescript@6.0.3)(vite@8.0.8(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.46.0)(yaml@2.9.0))(vue-tsc@3.3.3(typescript@6.0.3))(yaml@2.9.0)
       vue:
-        specifier: 'catalog:'
+        specifier: ^3.5.26
         version: 3.5.35(typescript@6.0.3)
       vue-router:
-        specifier: 'catalog:'
+        specifier: ^5.0.2
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.8(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.46.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
 
   playground:
