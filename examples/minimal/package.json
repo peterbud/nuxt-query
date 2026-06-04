@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@peterbud/nuxt-query": "^1.8.0",
-    "nuxt": "catalog:",
-    "vue": "catalog:",
-    "vue-router": "catalog:"
+    "nuxt": "^4.4.7",
+    "vue": "^3.5.26",
+    "vue-router": "^5.0.2"
   }
 }
