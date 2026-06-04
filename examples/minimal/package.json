@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@peterbud/nuxt-query": "^1.3.0",
+    "@peterbud/nuxt-query": "^1.8.0",
     "nuxt": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
