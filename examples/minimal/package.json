@@ -2,6 +2,7 @@
   "name": "nuxt-query-minimal-example",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
