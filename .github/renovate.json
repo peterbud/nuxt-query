@@ -1,0 +1,28 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended"
+    ],
+    "labels": [
+        "dependencies"
+    ],
+    "rangeStrategy": "replace",
+    "schedule": [
+        "before 5am on monday"
+    ],
+    "packageRules": [
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "groupName": "all dependencies",
+            "groupSlug": "all-dependencies"
+        }
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": [
+            "before 5am on monday"
+        ]
+    }
+}

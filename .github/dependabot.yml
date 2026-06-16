@@ -10,14 +10,3 @@ updates:
       actions-deps:
         patterns:
           - "*"
-
-  - package-ecosystem: npm
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    cooldown:
-      default-days: 5
-    groups:
-      all-dependencies:
-        patterns:
-          - "*"
