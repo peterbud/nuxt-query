@@ -76,5 +76,5 @@
     "vitest": "catalog:",
     "vue-tsc": "catalog:"
   },
-  "packageManager": "pnpm@11.3.0"
+  "packageManager": "pnpm@11.7.0"
 }
