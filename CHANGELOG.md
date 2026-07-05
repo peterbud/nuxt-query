@@ -1,5 +1,34 @@
 # Changelog
 
+## v1.9.0
+
+1.9.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.8.0...v1.9.0)
+
+### 📦 Build
+
+- Transition to pnpm 11 ([e864c6f](https://github.com/peterbud/nuxt-query/commit/e864c6f))
+- **deps:** Bump actions/checkout in the actions-deps group ([#160](https://github.com/peterbud/nuxt-query/pull/160))
+- **deps:** Bump actions/checkout ([#163](https://github.com/peterbud/nuxt-query/pull/163))
+
+### 🏡 Chore
+
+- Remove the dependency-type groups and use a unified group ([19f39f0](https://github.com/peterbud/nuxt-query/commit/19f39f0))
+- Update dependencies ([ed91702](https://github.com/peterbud/nuxt-query/commit/ed91702))
+- Dedupe and update @types/node ([b36ed4f](https://github.com/peterbud/nuxt-query/commit/b36ed4f))
+- Update dependencies ([fc641f5](https://github.com/peterbud/nuxt-query/commit/fc641f5))
+- Fix linting ([186bbc7](https://github.com/peterbud/nuxt-query/commit/186bbc7))
+- Updated dependencies ([2584f97](https://github.com/peterbud/nuxt-query/commit/2584f97))
+- Specify package manager version in minimal example ([09419a6](https://github.com/peterbud/nuxt-query/commit/09419a6))
+- Replace catalog dependencies in minimal example ([25838d1](https://github.com/peterbud/nuxt-query/commit/25838d1))
+- Update pnpm-lock.yaml ([756add7](https://github.com/peterbud/nuxt-query/commit/756add7))
+- Remove npm configuration from dependabot and add renovate configuration ([d485ba3](https://github.com/peterbud/nuxt-query/commit/d485ba3))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.8.0
 
 1.8.0 is the next minor release.
