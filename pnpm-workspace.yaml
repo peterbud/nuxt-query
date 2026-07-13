@@ -31,7 +31,7 @@ catalog:
   pkg-types: ^2.3.1
   sirv: ^3.0.2
   splitpanes: ^4.0.4
-  typescript: ~6.0.3
+  typescript: ~7.0.0
   vitest: ^4.1.8
   vue: ^3.5.26
   vue-json-pretty: ^2.5.0
