@@ -22,7 +22,7 @@ catalog:
   "@nuxt/test-utils": ^4.0.3
   "@tanstack/vue-query": ^5.101.0
   "@types/node": ^25.9.1
-  "@unocss/nuxt": 66.7.4
+  "@unocss/nuxt": 66.7.5
   changelogen: ^0.6.2
   concurrently: ^10.0.3
   defu: ^6.1.7
