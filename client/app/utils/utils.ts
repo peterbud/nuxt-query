@@ -46,7 +46,7 @@ export function sortQueries(queries: Query[], field: SortField, direction: SortD
       const queryA = a.query
       const queryB = b.query
 
-      let value = 0
+      let value: number
 
       if (field === 'status') {
         const statusA = getQueryStatusLabel(queryA)
@@ -82,7 +82,7 @@ export function sortMutations(mutations: Mutation[], field: SortField, direction
       const mutationA = a.mutation
       const mutationB = b.mutation
 
-      let value = 0
+      let value: number
 
       if (field === 'status') {
         const statusA = getMutationStatusLabel(mutationA)
