@@ -321,7 +321,16 @@ function handleRestoreTriggerLoading(query: Query) {
                   @click="toRaw(selectedQuery)?.fetch()"
                 >
                   <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display:block;width:24px;min-width:24px;height:24px;flex:none"><path fill="currentColor" d="m29.508 22.255l-2.078-3.74l-1.748.97l2.078 3.742a1.85 1.85 0 0 1-.023 1.853c-.34.576-.941.92-1.61.92H18.83l2.58-2.59L20 22l-5 5l5 5l1.41-1.41L18.83 28h7.298a3.83 3.83 0 0 0 3.332-1.906a3.83 3.83 0 0 0 .048-3.84zM5.873 26a1.85 1.85 0 0 1-1.61-.92a1.85 1.85 0 0 1-.022-1.853l4.11-7.4l1.049 3.52l1.912-.567L9.303 12l-6.78 2.008l.567 1.912l3.493-1.03l-4.09 7.365a3.83 3.83 0 0 0 .047 3.84A3.83 3.83 0 0 0 5.873 28H12v-2zM25.51 9.654l-1.048 3.519L19.35 3.97C18.664 2.737 17.412 2 16 2s-2.665.737-3.35 1.971L9.57 9.515l1.749.97l3.08-5.543C14.725 4.352 15.324 4 16 4s1.274.353 1.602.942l5.092 9.167l-3.494-1.03l-.566 1.913L25.414 17l2.008-6.78z"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      style="display:block;width:24px;min-width:24px;height:24px;flex:none"
+                    ><path
+                      fill="currentColor"
+                      d="m29.508 22.255l-2.078-3.74l-1.748.97l2.078 3.742a1.85 1.85 0 0 1-.023 1.853c-.34.576-.941.92-1.61.92H18.83l2.58-2.59L20 22l-5 5l5 5l1.41-1.41L18.83 28h7.298a3.83 3.83 0 0 0 3.332-1.906a3.83 3.83 0 0 0 .048-3.84zM5.873 26a1.85 1.85 0 0 1-1.61-.92a1.85 1.85 0 0 1-.022-1.853l4.11-7.4l1.049 3.52l1.912-.567L9.303 12l-6.78 2.008l.567 1.912l3.493-1.03l-4.09 7.365a3.83 3.83 0 0 0 .047 3.84A3.83 3.83 0 0 0 5.873 28H12v-2zM25.51 9.654l-1.048 3.519L19.35 3.97C18.664 2.737 17.412 2 16 2s-2.665.737-3.35 1.971L9.57 9.515l1.749.97l3.08-5.543C14.725 4.352 15.324 4 16 4s1.274.353 1.602.942l5.092 9.167l-3.494-1.03l-.566 1.913L25.414 17l2.008-6.78z"
+                    /></svg>
                   </template>
                 </NButton>
                 <NButton
@@ -332,7 +341,19 @@ function handleRestoreTriggerLoading(query: Query) {
                   @click="toRaw(selectedQuery)?.invalidate()"
                 >
                   <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display:block;width:24px;min-width:24px;height:24px;flex:none"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z"/><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      style="display:block;width:24px;min-width:24px;height:24px;flex:none"
+                    ><path
+                      fill="currentColor"
+                      d="M12 12h2v12h-2zm6 0h2v12h-2z"
+                    /><path
+                      fill="currentColor"
+                      d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"
+                    /></svg>
                   </template>
                 </NButton>
                 <NButton
@@ -343,7 +364,16 @@ function handleRestoreTriggerLoading(query: Query) {
                   @click="toRaw(selectedQuery)?.reset()"
                 >
                   <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display:block;width:24px;min-width:24px;height:24px;flex:none"><path fill="currentColor" d="M26 18A10 10 0 1 1 16 8h6.182l-3.584 3.585L20 13l6-6l-6-6l-1.402 1.414L22.185 6H16a12 12 0 1 0 12 12Z"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      style="display:block;width:24px;min-width:24px;height:24px;flex:none"
+                    ><path
+                      fill="currentColor"
+                      d="M26 18A10 10 0 1 1 16 8h6.182l-3.584 3.585L20 13l6-6l-6-6l-1.402 1.414L22.185 6H16a12 12 0 1 0 12 12Z"
+                    /></svg>
                   </template>
                 </NButton>
                 <NButton
@@ -353,7 +383,19 @@ function handleRestoreTriggerLoading(query: Query) {
                   @click="handleRestoreTriggerLoading(toRaw(selectedQuery) as Query)"
                 >
                   <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display:block;width:24px;min-width:24px;height:24px;flex:none"><path fill="currentColor" d="M15 19h2v2h-2zm0 4h2v2h-2z"/><path fill="currentColor" d="M23 11.67V4h3V2H6v2h3v7.67a2 2 0 0 0 .4 1.2L11.75 16L9.4 19.13a2 2 0 0 0-.4 1.2V28H6v2h20v-2h-3v-7.67a2 2 0 0 0-.4-1.2L20.25 16l2.35-3.13a2 2 0 0 0 .4-1.2M21 4v7H11V4Zm0 16.33V28H11v-7.67L14.25 16L12 13h8l-2.25 3Z"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      style="display:block;width:24px;min-width:24px;height:24px;flex:none"
+                    ><path
+                      fill="currentColor"
+                      d="M15 19h2v2h-2zm0 4h2v2h-2z"
+                    /><path
+                      fill="currentColor"
+                      d="M23 11.67V4h3V2H6v2h3v7.67a2 2 0 0 0 .4 1.2L11.75 16L9.4 19.13a2 2 0 0 0-.4 1.2V28H6v2h20v-2h-3v-7.67a2 2 0 0 0-.4-1.2L20.25 16l2.35-3.13a2 2 0 0 0 .4-1.2M21 4v7H11V4Zm0 16.33V28H11v-7.67L14.25 16L12 13h8l-2.25 3Z"
+                    /></svg>
                   </template>
                 </NButton>
                 <NButton
@@ -364,7 +406,19 @@ function handleRestoreTriggerLoading(query: Query) {
                   @click="handleRestoreTriggerError(toRaw(selectedQuery) as Query)"
                 >
                   <template #icon>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display:block;width:24px;min-width:24px;height:24px;flex:none"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12"/><path fill="currentColor" d="M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      style="display:block;width:24px;min-width:24px;height:24px;flex:none"
+                    ><path
+                      fill="currentColor"
+                      d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12"
+                    /><path
+                      fill="currentColor"
+                      d="M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22"
+                    /></svg>
                   </template>
                 </NButton>
               </template>
