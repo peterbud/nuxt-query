@@ -40,3 +40,6 @@ catalog:
 
 patchedDependencies:
   "@nuxt/devtools-ui-kit@3.2.4": patches/@nuxt__devtools-ui-kit@3.2.4.patch
+minimumReleaseAgeExclude:
+  # Renovate security update: nuxt@4.5.1
+  - nuxt@4.5.1
