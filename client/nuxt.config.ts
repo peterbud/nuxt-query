@@ -3,7 +3,7 @@ import { createResolver } from 'nuxt/kit'
 const resolver = createResolver(import.meta.url)
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/devtools-ui-kit',
+    '@unocss/nuxt',
   ],
   ssr: false,
   app: {
@@ -37,5 +37,14 @@ export default defineNuxtConfig({
       ],
     },
   },
-  unocss: {},
+  unocss: {
+    icons: {
+      scale: 1.2,
+      extraProperties: {
+        'color': 'inherit',
+        // Avoid crushing of icons in crowded situations
+        'min-width': '1.2em',
+      },
+    },
+  },
 })

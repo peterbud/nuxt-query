@@ -48,13 +48,13 @@ function getStatusColor(status: MutationStatus) {
 <template>
   <div
     class="flex flex-wrap gap-2 p-2"
-    :style="{ 'border-bottom': '1px solid rgba(128,128,128, 0.8)' }"
+    :style="{ 'border-bottom': '1px solid var(--nq-border-strong)' }"
   >
     <div
       v-for="status in statusOrder"
       :key="status.key"
       class="inline-flex items-center gap-2 rounded px-2 py-1 text-xs"
-      :style="{ 'background-color': 'rgba(128,128,128, 0.12)' }"
+      :style="{ 'background-color': 'var(--nq-surface-muted)' }"
     >
       <span
         :style="{
@@ -65,7 +65,10 @@ function getStatusColor(status: MutationStatus) {
         }"
       />
       <span class="op75">{{ status.label }}</span>
-      <span class="text-secondary font-mono">{{ statusCounts[status.key] }}</span>
+      <span
+        class="font-mono"
+        :style="{ color: 'var(--nq-text-muted)' }"
+      >{{ statusCounts[status.key] }}</span>
     </div>
   </div>
 </template>

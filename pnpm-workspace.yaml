@@ -12,9 +12,8 @@ allowBuilds:
   vue-demi: false
 
 catalog:
-  "@nuxt/devtools": ^3.2.4
-  "@nuxt/devtools-kit": ^3.2.4
-  "@nuxt/devtools-ui-kit": ^3.2.4
+  "@nuxt/devtools": ^3.4.1
+  "@nuxt/devtools-kit": ^3.4.1
   "@nuxt/eslint-config": ^1.15.2
   "@nuxt/kit": ^4.4.7
   "@nuxt/module-builder": 1.0.3
@@ -23,6 +22,8 @@ catalog:
   "@tanstack/vue-query": ^5.101.0
   "@types/node": ^25.9.1
   "@unocss/nuxt": 66.7.5
+  "@unocss/preset-icons": 66.7.5
+  "@iconify-json/carbon": 1.2.25
   changelogen: ^0.6.2
   concurrently: ^10.0.3
   defu: ^6.1.7
@@ -37,9 +38,6 @@ catalog:
   vue-json-pretty: ^2.5.0
   vue-router: ^5.0.2
   vue-tsc: ^3.3.3
-
-patchedDependencies:
-  "@nuxt/devtools-ui-kit@3.2.4": patches/@nuxt__devtools-ui-kit@3.2.4.patch
 minimumReleaseAgeExclude:
   # Renovate security update: nuxt@4.5.1
   - nuxt@4.5.1

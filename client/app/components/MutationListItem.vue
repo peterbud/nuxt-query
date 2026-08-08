@@ -10,7 +10,7 @@ defineEmits(['click'])
 
 <template>
   <div
-    class="grid gap-2 px-2 text-secondary hover:n-bg-hover cursor-pointer truncate max-w-full"
+    class="grid gap-2 px-2 py-1.5 cursor-pointer truncate max-w-full nq-list-item"
     :style="{
       'grid-template-columns': '1em 1fr',
     }"
@@ -30,3 +30,13 @@ defineEmits(['click'])
     </div>
   </div>
 </template>
+
+<style>
+.nq-list-item {
+  color: var(--nq-text-muted);
+}
+
+.nq-list-item:hover {
+  background: var(--nq-surface-hover);
+}
+</style>

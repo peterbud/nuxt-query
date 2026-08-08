@@ -11,7 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@peterbud/nuxt-query": "^1.8.0",
+    "@peterbud/nuxt-query": "^1.9.0",
     "nuxt": "^4.4.7",
     "vue": "^3.5.26",
     "vue-router": "^5.0.2"

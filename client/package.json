@@ -6,5 +6,10 @@
     "@tanstack/vue-query": "catalog:",
     "splitpanes": "catalog:",
     "vue-json-pretty": "catalog:"
+  },
+  "devDependencies": {
+    "@unocss/nuxt": "catalog:",
+    "@unocss/preset-icons": "catalog:",
+    "@iconify-json/carbon": "catalog:"
   }
 }

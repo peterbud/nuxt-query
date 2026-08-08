@@ -1,9 +1,18 @@
 <script lang="ts" setup>
-const getUsers = async () => {
+import {onServerPrefetch} from 'vue'
+import {useQuery} from '@tanstack/vue-query'
+
+type User = {
+  id: number
+  name: string
+  email: string
+}
+
+const getUsers = async (): Promise<User[]> => {
   return await $fetch('https://jsonplaceholder.typicode.com/users')
 }
 
-const { isPending: isPending, data: users, suspense } = useQuery({
+const { isPending: isPending, data: users, suspense } = useQuery<User[]>({
   queryKey: ['users'],
   queryFn: getUsers,
 })

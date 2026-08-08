@@ -28,17 +28,24 @@ function toggleDirection() {
 
 <template>
   <div
-    class="grid gap-2 p-2 b-b-1 b-[rgba(128,128,128,0.8)]"
+    class="grid gap-2 p-2 b-b-1"
+    :style="{ 'border-color': 'var(--nq-border-strong)' }"
   >
     <div
-      class="grid items-center gap-2 grid-cols-[minmax(0,1fr)_auto]"
+      class="grid items-center gap-2 grid-cols-[minmax(7em,1fr)_auto]"
     >
-      <div class="relative min-w-16">
-        <span class="i-carbon-search absolute left-3 top-1/2 -translate-y-1/2 op50" />
+      <div
+        class="flex min-w-16 items-center gap-2 rounded pl-2"
+        :style="{
+          'border': '1px solid var(--nq-border-strong)',
+          'background-color': 'var(--nq-surface-muted)',
+        }"
+      >
+        <span class="i-carbon-search h-4 w-4 shrink-0 op50" />
         <input
           v-model="searchModel"
           type="text"
-          class="w-full rounded pl-9 pr-1 py-2 text-sm"
+          class="block min-w-0 flex-1 appearance-none border-0 bg-transparent px-0 py-2 text-sm outline-none"
           placeholder="Search..."
           aria-label="Search"
         >
@@ -69,14 +76,14 @@ function toggleDirection() {
             Date/Time
           </option>
         </select>
-        <NButton
+        <AppButton
           size="small"
-          class="text-primary w-auto"
+          class="w-auto"
           :title="sortDirection === 'asc' ? 'Ascending' : 'Descending'"
           @click="toggleDirection"
         >
           {{ sortDirection === 'asc' ? 'ASC' : 'DESC' }}
-        </NButton>
+        </AppButton>
       </div>
     </div>
 

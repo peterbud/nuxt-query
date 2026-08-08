@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div
-    class="grid gap-2 px-2 text-secondary hover:n-bg-hover truncate max-w-full"
+    class="grid gap-2 px-2 py-0.5 cursor-pointer truncate max-w-full nq-list-item"
     :style="{
       'grid-template-columns': '1em 1fr auto auto auto',
     }"
@@ -29,7 +29,7 @@ defineProps<{
       {{ item.queryKey }}
     </div>
     <div class="text-right">
-      <span
+      <div
         :class="{
           'i-carbon-play-outline-filled text-green': item.state.fetchStatus === 'fetching',
           'i-carbon-pause-outline-filled text-gray': item.state.fetchStatus === 'paused',
@@ -38,7 +38,7 @@ defineProps<{
       />
     </div>
     <div class="text-right">
-      <span
+      <div
         :class="{
           'i-carbon-checkmark-filled text-green': item.state.status === 'success',
           'i-carbon-error-filled text-red': item.state.status === 'error',
@@ -47,7 +47,7 @@ defineProps<{
       />
     </div>
     <div class="text-right">
-      <span
+      <div
         :class="{
           'i-carbon-view-off-filled text-gray': item.observers.length === 0,
           'i-carbon-view-filled text-blue': item.observers.length !== 0,
@@ -56,3 +56,13 @@ defineProps<{
     </div>
   </div>
 </template>
+
+<style>
+.nq-list-item {
+  color: var(--nq-text-muted);
+}
+
+.nq-list-item:hover {
+  background: var(--nq-surface-hover);
+}
+</style>
