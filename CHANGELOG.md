@@ -1,5 +1,31 @@
 # Changelog
 
+## v1.10.0
+
+1.10.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.9.0...v1.10.0)
+
+### 🚀 Enhancements
+
+- Remove dependency on devtools-ui-kit ([5649666](https://github.com/peterbud/nuxt-query/commit/5649666))
+
+### 🩹 Fixes
+
+- Remove init value ([2514114](https://github.com/peterbud/nuxt-query/commit/2514114))
+
+### 💅 Refactors
+
+- Replace non-working unocss icons ([ec22082](https://github.com/peterbud/nuxt-query/commit/ec22082))
+
+### 📦 Build
+
+- **deps:** Bump actions/checkout in the actions-deps group ([#176](https://github.com/peterbud/nuxt-query/pull/176))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.9.0
 
 1.9.0 is the next minor release.
