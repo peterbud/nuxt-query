@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {onServerPrefetch} from 'vue'
-import {useQuery} from '@tanstack/vue-query'
+import { onServerPrefetch } from 'vue'
+import { useQuery } from '@tanstack/vue-query'
 
 type User = {
   id: number
