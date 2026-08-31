@@ -23,7 +23,7 @@ catalog:
   "@types/node": ^25.9.1
   "@unocss/nuxt": 66.8.1
   "@unocss/preset-icons": 66.8.1
-  "@iconify-json/carbon": 1.2.25
+  "@iconify-json/carbon": 1.2.26
   changelogen: ^0.6.2
   concurrently: ^10.0.3
   defu: ^6.1.7
