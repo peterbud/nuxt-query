@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.11.0
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.10.0...v1.11.0)
+
+### 🩹 Fixes
+
+- Ensure hydration only occurs when vueQueryState is available ([4d90a93](https://github.com/peterbud/nuxt-query/commit/4d90a93))
+
+### 🏡 Chore
+
+- **example:** Update dependencies ([224f5bf](https://github.com/peterbud/nuxt-query/commit/224f5bf))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.10.0
 
 1.10.0 is the next minor release.
