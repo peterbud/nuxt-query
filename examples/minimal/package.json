@@ -2,7 +2,7 @@
   "name": "nuxt-query-minimal-example",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.3.0",
+  "packageManager": "pnpm@11.24.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,9 +11,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@peterbud/nuxt-query": "^1.9.0",
-    "nuxt": "^4.4.7",
-    "vue": "^3.5.26",
-    "vue-router": "^5.0.2"
+    "@peterbud/nuxt-query": "^1.10.0",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
   }
 }
