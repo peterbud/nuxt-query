@@ -122,6 +122,49 @@ export default defineNuxtPlugin({
 })
 ```
 
+## SSR And Payloads
+
+Await server queries with `onServerPrefetch(suspense)` or an awaited `queryClient.prefetchQuery()` during page rendering. The module captures `dehydrate(queryClient)` at `app:rendered`, after awaited rendering finishes and before Nuxt serializes the payload. Each server app creates its own QueryClient; custom clients supplied through `nuxt-query:configure` must also be created per request, never shared between requests.
+
+The snapshot lives only in `nuxtApp.payload.data['vue-query-state']`, not in `useState`. Its transport format is TanStack's unmodified `DehydratedState`, with no route metadata or wrapper. The QueryClient itself is never serialized. This replaces the previous `payload.state` transport; applications inspecting that internal value must migrate. Use the query cache, not the transport key, in application code.
+
+For extracted routes, Nuxt includes this key in `_payload.json` (or its configured JavaScript payload). The browser hydrates before components mount, after Nuxt has revived and merged the initial payload:
+
+- `experimental.payloadExtraction: 'client'`: initial data stays inline; navigation uses extracted payloads.
+- `true`: Nuxt loads the external initial payload before the module hydrates it; navigation also uses extracted payloads.
+- `false`: direct SSR hydration still works inline; navigation fetches queries normally.
+
+On navigation, Nuxt loads the destination payload in `router.beforeResolve` and copies its data into `nuxtApp.static.data`. A synchronous successful `router.afterEach` reads `static.data['vue-query-state']` and passes the snapshot to TanStack's `hydrate()` before Vue mounts destination query consumers. The static snapshot is removed on both successful and failed navigation; failed navigation does not hydrate it. The module does not request payloads or add a prefetch cache: NuxtLink prefetching and Nuxt's own loader/HTTP cache remain responsible for transport. Query identity, freshness, and merging remain TanStack's responsibility. Failed, cancelled, superseded, or missing payloads do not stop normal client fetching. Routes without extraction and client-only routes continue to fetch normally.
+
+### Cache And Privacy
+
+Hydration uses TanStack's normal merge semantics, preserving query keys and `dataUpdatedAt`; an older SWR snapshot does not overwrite newer browser data. Nitro's SWR/ISR lifetime controls server response caching, independently of TanStack's `staleTime`. Set a suitable `staleTime` when hydrated data should remain fresh; stale queries still refetch normally. The module does not disable refetching or introduce another query cache.
+
+`dehydrate(queryClient)` continues to respect `defaultOptions.dehydrate` on a custom QueryClient, including query/mutation filters and serialization options. Nuxt remains responsible for payload serialization and configured reducers/revivers. JSON payloads support Nuxt's serializable rich values, such as `Date`; arbitrary class instances and functions are not made serializable by this module.
+
+**Only cache public routes with shared SWR/ISR.** Request-local QueryClients prevent cross-request cache reuse, but do not make a shared Nitro response private. Do not include authenticated or user-specific query data in a shared route's snapshot or rendered HTML. Configure dehydration filters through a custom QueryClient when needed, for example:
+
+```typescript
+import type { QueryClientConfig } from '@tanstack/vue-query'
+import { defaultShouldDehydrateQuery } from '@tanstack/vue-query'
+
+// Inside the per-request QueryClient options:
+const defaultOptions: QueryClientConfig['defaultOptions'] = {
+  dehydrate: {
+    shouldDehydrateQuery: query =>
+      defaultShouldDehydrateQuery(query) && query.meta?.private !== true,
+  },
+}
+```
+
+Mark those queries with `meta: { private: true }`. Filtering the snapshot does not protect private data already rendered into cached HTML; such routes must not use shared response caching.
+
+### Compatibility
+
+The lifecycle and extraction modes above were source-checked against Nuxt 4.4.7 and 4.5.2. Production SSR/browser tests run against Nuxt 4.5.2 and TanStack Query 5.103.1, covering runtime SWR/ISR payloads, all three extraction modes, initial/navigation hydration, rich values, custom dehydration filtering, request isolation, stale refetching, and failed/superseded navigation. Older Nuxt releases are not covered by this verification, and deployment-specific ISR adapters are not tested by the Node fixture.
+
+Nuxt 4.4.7 does not expose SSR streaming. In Nuxt 4.5.2, the streaming renderer calls `app:rendered` after the body stream finishes and before emitting the final inline payload; an opted-in streaming route is tested. Nuxt excludes cached SWR/ISR routes, prerendering, and payload requests from streaming. Only awaited queries completed by that capture point are guaranteed to be included; background work continuing after rendering is not. Streaming support on other Nuxt versions is not assumed.
+
 ## Nuxt DevTools Integration
 
 Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
@@ -153,6 +196,9 @@ Also, you can inspect your mutation cache using the same DevTools in a convenien
   # Run ESLint
   npm run lint
   
+  # Install Chromium for the Nuxt browser tests
+  pnpm exec playwright-core install chromium
+
   # Run Vitest
   npm run test
   npm run test:watch

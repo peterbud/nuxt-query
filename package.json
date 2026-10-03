@@ -72,6 +72,7 @@
     "concurrently": "catalog:",
     "eslint": "catalog:",
     "nuxt": "catalog:",
+    "playwright-core": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vue-tsc": "catalog:"

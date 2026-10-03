@@ -38,6 +38,7 @@ catalog:
   vue-json-pretty: ^2.5.0
   vue-router: ^5.0.2
   vue-tsc: ^3.3.3
+  playwright-core: ^1.63.0
 minimumReleaseAgeExclude:
   # Renovate security update: nuxt@4.5.1
   - nuxt@4.5.1
