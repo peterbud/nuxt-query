@@ -15,8 +15,18 @@
             "matchManagers": [
                 "npm"
             ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
             "groupName": "all dependencies",
             "groupSlug": "all-dependencies"
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "enabled": false
         }
     ],
     "lockFileMaintenance": {
