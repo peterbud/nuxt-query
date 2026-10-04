@@ -1,5 +1,27 @@
 # Changelog
 
+## v1.12.0
+
+1.12.0 is the next minor release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.11.0...v1.12.0)
+
+### 🚀 Enhancements
+
+- Add payload extraction support ([ce25b6b](https://github.com/peterbud/nuxt-query/commit/ce25b6b))
+
+### 🩹 Fixes
+
+- Ensure hydration occurs only when vueQueryState is not null ([2c23592](https://github.com/peterbud/nuxt-query/commit/2c23592))
+
+### 📖 Documentation
+
+- Simplify README ([31f4e70](https://github.com/peterbud/nuxt-query/commit/31f4e70))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.11.0
 
 [compare changes](https://github.com/peterbud/nuxt-query/compare/v1.10.0...v1.11.0)
