@@ -142,10 +142,6 @@ Use `defaultOptions.dehydrate` on a custom QueryClient to filter or transform de
 
 **Only cache public routes with shared SWR/ISR.** Per-request QueryClients do not protect user-specific data in cached HTML or payloads. Dehydration filters exclude data from the payload, not from rendered HTML.
 
-### Compatibility
-
-The SSR/browser suite targets Nuxt 4.5.2 and TanStack Query 5, covering payload extraction, hydration, cache behavior, request isolation, and opted-in SSR streaming. Older Nuxt versions and deployment-specific ISR adapters are not covered by these tests.
-
 ## Nuxt DevTools Integration
 
 Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
