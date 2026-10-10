@@ -142,7 +142,11 @@ describe('ssr', async () => {
     const requests: string[] = []
     page.on('request', request => requests.push(request.url()))
     await page.waitForLoadState('networkidle')
-    await page.evaluate('window.queryTest.nuxtApp.callHook(\'link:prefetch\', \'/swr\')')
+    const [prefetchResponse] = await Promise.all([
+      page.waitForResponse(response => response.url().includes('/swr/_payload.json')),
+      page.evaluate('window.queryTest.nuxtApp.callHook(\'link:prefetch\', \'/swr\')'),
+    ])
+    await prefetchResponse.finished()
     expect(requests.filter(request => request.includes('/swr/_payload.json'))).toHaveLength(1)
     requests.length = 0
     await page.locator('a[href="/swr"]').click()

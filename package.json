@@ -40,16 +40,16 @@
   ],
   "scripts": {
     "build": "nuxt-module-build prepare && nuxt-module-build build && pnpm build:client",
-    "build:client": "nuxi generate client",
-    "dev": "nuxi dev playground",
-    "dev:client": "concurrently \"nuxi dev client --port 3300\" \"nuxi dev playground\"",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "build:client": "nuxt-cli generate client",
+    "dev": "nuxt-cli dev playground",
+    "dev:client": "concurrently \"nuxt-cli dev client --port 3300\" \"nuxt-cli dev playground\"",
+    "dev:build": "nuxt-cli build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt-cli prepare playground",
     "release": "pnpm lint && pnpm build && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:types": "vue-tsc --noEmit && pnpm -r test:types"
   },
   "dependencies": {
     "@nuxt/devtools-kit": "catalog:",

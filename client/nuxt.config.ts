@@ -29,7 +29,9 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: [
+        '@nuxt/devtools-kit/iframe-client',
         '@tanstack/vue-query',
+        'splitpanes',
         'vue-json-pretty',
       ],
     },
