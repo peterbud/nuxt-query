@@ -22,16 +22,14 @@ export function setupDevToolsUI(nuxt: Nuxt, resolver: Resolver) {
   }
   // In local development, start a separate Nuxt Server and proxy to serve the client
   else {
-    nuxt.hook('vite:extendConfig', (config) => {
-      config.server = config.server || {}
-      config.server.proxy = config.server.proxy || {}
-      config.server.proxy[DEVTOOLS_UI_ROUTE] = {
-        target: `http://localhost:${DEVTOOLS_UI_LOCAL_PORT}${DEVTOOLS_UI_ROUTE}`,
-        changeOrigin: true,
-        followRedirects: true,
-        rewrite: path => path.replace(DEVTOOLS_UI_ROUTE, ''),
-      }
-    })
+    nuxt.options.vite.server = nuxt.options.vite.server || {}
+    nuxt.options.vite.server.proxy = nuxt.options.vite.server.proxy || {}
+    nuxt.options.vite.server.proxy[DEVTOOLS_UI_ROUTE] = {
+      target: `http://localhost:${DEVTOOLS_UI_LOCAL_PORT}${DEVTOOLS_UI_ROUTE}`,
+      changeOrigin: true,
+      followRedirects: true,
+      rewrite: path => path.replace(DEVTOOLS_UI_ROUTE, ''),
+    }
   }
 
   addCustomTab({
