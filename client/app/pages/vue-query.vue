@@ -111,37 +111,35 @@ function onMutationNotification(event: MutationCacheNotifyEvent) {
   }
 }
 
-watchEffect(() => {
-  if (!queryCache.value) {
+watchEffect((onCleanup) => {
+  const cache = queryCache.value
+  if (!cache) {
     return
   }
 
-  queryCache.value.getAll().forEach((query) => {
-    queries.value.push(query)
-  })
-  const unsubscribe = queryCache.value.subscribe(onQueryNotification)
+  queries.value = [...cache.getAll()]
+  const unsubscribe = cache.subscribe(onQueryNotification)
 
-  onBeforeUnmount(() => {
-    queries.value = []
-    queryCache.value?.clear()
+  onCleanup(() => {
     unsubscribe()
+    queries.value = []
+    selectedQuery.value = null
   })
 })
 
-watchEffect(() => {
-  if (!mutationCache.value) {
+watchEffect((onCleanup) => {
+  const cache = mutationCache.value
+  if (!cache) {
     return
   }
 
-  mutationCache.value.getAll().forEach((mutation) => {
-    mutations.value.push(mutation)
-  })
-  const unsubscribe = mutationCache.value.subscribe(onMutationNotification)
+  mutations.value = [...cache.getAll()]
+  const unsubscribe = cache.subscribe(onMutationNotification)
 
-  onBeforeUnmount(() => {
-    mutations.value = []
-    mutationCache.value?.clear()
+  onCleanup(() => {
     unsubscribe()
+    mutations.value = []
+    selectedMutation.value = null
   })
 })
 
