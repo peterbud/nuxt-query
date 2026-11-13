@@ -1,5 +1,39 @@
 # Changelog
 
+## v1.13.0
+
+1.13.0 is the next minor release.
+
+**Looking ahead**: Nuxt Query 2.0 will introduce native Nuxt DevTools 4 integration, requiring Nuxt 4.5+. If you’re staying on DevTools 3, the 1.x line will remain available and receive critical fixes on a dedicated maintenance branch. No migration is needed for this release.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.12.0...v1.13.0)
+
+### 💅 Refactors
+
+- Simplify proxy configuration for local development ([6a6fa2a](https://github.com/peterbud/nuxt-query/commit/6a6fa2a))
+- Optimize cache handling in watchEffect for queries and mutations ([5f265bf](https://github.com/peterbud/nuxt-query/commit/5f265bf))
+
+### 📖 Documentation
+
+- Remove compatibility section from README ([c517146](https://github.com/peterbud/nuxt-query/commit/c517146))
+
+### 📦 Build
+
+- **deps:** Bump fast-uri from 3.1.8 to 3.1.9 ([#208](https://github.com/peterbud/nuxt-query/pull/208))
+
+### 🏡 Chore
+
+- Update dependencies ([36f34ec](https://github.com/peterbud/nuxt-query/commit/36f34ec))
+- Update dependencies ([2b4c120](https://github.com/peterbud/nuxt-query/commit/2b4c120))
+
+### 🤖 CI
+
+- Update package rules to include only minor and patch updates ([b180670](https://github.com/peterbud/nuxt-query/commit/b180670))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.12.0
 
 1.12.0 is the next minor release.
