@@ -3,6 +3,10 @@
     "extends": [
         "config:recommended"
     ],
+    "baseBranchPatterns": [
+        "main",
+        "1.x"
+    ],
     "labels": [
         "dependencies"
     ],
