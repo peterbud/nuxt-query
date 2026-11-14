@@ -44,7 +44,7 @@
     "dev": "nuxt-cli dev playground",
     "dev:client": "concurrently \"nuxt-cli dev client --port 3300\" \"nuxt-cli dev playground\"",
     "dev:build": "nuxt-cli build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt-cli prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt-cli prepare playground && nuxt-cli prepare client",
     "release": "pnpm lint && pnpm test:types && pnpm test && pnpm build && changelogen --bump",
     "lint": "eslint .",
     "test": "vitest run",

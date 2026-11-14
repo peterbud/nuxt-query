@@ -59,8 +59,11 @@ jobs:
       - name: 👀 Lint project
         run: pnpm lint
 
-      - name: 🧪 Check types and tests
-        run: pnpm test:types && pnpm test
+      - name: Check types
+        run: pnpm test:types
+
+      - name: 🧪 Test project
+        run: pnpm test
 
       - name: 🏗️ Build production bundle
         run: pnpm run build
