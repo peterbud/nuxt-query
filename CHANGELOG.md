@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0-beta.1
+## v2.0.0-beta.2
 
 ### ⚠️ Breaking Changes
 
@@ -17,11 +17,12 @@
   months after stable 2.0, without new features or expanded
   compatibility guarantees.
 
-[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.13.0...v2.0.0-beta.1)
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.13.0...v2.0.0-beta.2)
 
 ### 🚀 Enhancements
 
 - Upgrade Nuxt DevTools to version 4 ([db9fa23](https://github.com/peterbud/nuxt-query/commit/db9fa23))
+- Enhance CI workflows by separating type checks and tests ([d85d690](https://github.com/peterbud/nuxt-query/commit/d85d690))
 
 ### 🏡 Chore
 
