@@ -20,38 +20,21 @@ A powerful Nuxt module for integrating [TanStack Query](https://tanstack.com/que
 
 ## Installation
 
-The 2.x release channel is `beta` until stable 2.0 ships. During beta, npm's
-`latest` tag stays on stable 1.x, so normal installs remain on DevTools 3.
-To opt into published 2.x betas:
+Nuxt Query 2.x requires **Nuxt 4.5+ (Nuxt 4)** with the Vite builder.
+Install the beta:
 
 ```bash
 npm install @peterbud/nuxt-query@beta
 ```
 
-### 2.x Compatibility
+For older Nuxt or the DevTools 3 integration, use
+`npm install @peterbud/nuxt-query@1`. Stable 1.x remains npm's `latest` until
+stable 2.0 ships.
 
-Requires **Nuxt 4.5+ (Nuxt 4)** with Vite. The optional DevTools panel requires
-**Nuxt DevTools 4** and **Vite 8.1.5+**. Nuxt 4 bundles DevTools 3; apply the [upstream DevTools 4 override](https://nuxt.com/modules/devtools/upgrading-to-v4) to enable the Devtools panel.
-
-On older Nuxt (or Nuxt 3), or with DevTools 3, stay on 1.x:
-`npm install @peterbud/nuxt-query@1`. After stable 2.0 ships, 1.x maintenance
-releases use `legacy` instead of `latest`. Critical bug and security fixes for
-1.x continue for six months after stable 2.0, not the first beta.
-
-### Stable Installation
-
-These commands install `latest`: 1.x during beta, then 2.x after stable 2.0.
-You can add the module via the Nuxt CLI:
-
-```bash
-npx nuxi module add @peterbud/nuxt-query
-```
-
-or via npm:
-
-```bash
-npm install @peterbud/nuxt-query
-```
+The optional DevTools panel requires **Nuxt DevTools 4** and **Vite 8.1.5+**.
+Nuxt 4 bundles DevTools 3, so apply the
+[upstream DevTools 4 override](https://nuxt.com/modules/devtools/upgrading-to-v4)
+to enable the panel. Nuxt Query does not apply the override automatically.
 
 ## Configuration
 

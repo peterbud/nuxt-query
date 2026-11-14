@@ -1,5 +1,36 @@
 # Changelog
 
+## v2.0.0-beta.1
+
+### ⚠️ Breaking Changes
+
+- Require Nuxt 4.5+ (Nuxt 4) with the Vite builder. The DevTools panel requires
+  Nuxt DevTools 4 and Vite 8.1.5+; Nuxt 5 is not yet a tested support target.
+  On older Nuxt, stay on `@peterbud/nuxt-query@1`.
+- Replaced the DevTools 3 custom tab with one native Nuxt DevTools 4 dock in
+  **Nuxt → Modules**. Nuxt 4 still bundles DevTools 3: follow the
+  [upstream upgrade instructions](https://nuxt.com/modules/devtools/upgrading-to-v4) and override that dependency explicitly. Nuxt Query does not install DevTools or modify consumer overrides.
+- During the 2.0 beta, 1.x retains npm's `latest` tag; opt into 2.x with
+  `npm install @peterbud/nuxt-query@beta`. After stable 2.0,
+  maintenance releases will use npm's `legacy` tag, while 2.x uses `latest`.
+  The `1.x` branch receives critical bug and security fixes only for six
+  months after stable 2.0, without new features or expanded
+  compatibility guarantees.
+
+[compare changes](https://github.com/peterbud/nuxt-query/compare/v1.13.0...v2.0.0-beta.1)
+
+### 🚀 Enhancements
+
+- Upgrade Nuxt DevTools to version 4 ([db9fa23](https://github.com/peterbud/nuxt-query/commit/db9fa23))
+
+### 🏡 Chore
+
+- Update baseBranchPatterns in renovate configuration ([53f9c4c](https://github.com/peterbud/nuxt-query/commit/53f9c4c))
+
+### ❤️ Contributors
+
+- Peter Budai <peterbudai@hotmail.com>
+
 ## v1.13.0
 
 1.13.0 is the next minor release.
