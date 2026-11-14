@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
-import type { Query, QueryCacheNotifyEvent, QueryClient, Mutation, MutationCacheNotifyEvent } from '@tanstack/vue-query'
+import type { Query, QueryCacheNotifyEvent, Mutation, MutationCacheNotifyEvent } from '@tanstack/vue-query'
+import { useHostQueryClient } from '../utils/useHostQueryClient'
 import {
   getMutationBackgroundColor,
   getMutationStatusLabel,
@@ -24,8 +24,7 @@ const querySortDirection = ref<SortDirection>('asc')
 const mutationSortField = ref<SortField>('key')
 const mutationSortDirection = ref<SortDirection>('asc')
 
-const devtoolsClient = useDevtoolsClient()
-const queryClient = computed(() => devtoolsClient.value?.host?.nuxt.vueApp.config.globalProperties?.$queryClient as QueryClient | undefined)
+const { queryClient, connectionMessage } = useHostQueryClient()
 const queryCache = computed(() => queryClient.value?.getQueryCache())
 const mutationCache = computed(() => queryClient.value?.getMutationCache())
 const filteredQueries = computed(() => {
@@ -111,8 +110,8 @@ function onMutationNotification(event: MutationCacheNotifyEvent) {
   }
 }
 
-watchEffect((onCleanup) => {
-  const cache = queryCache.value
+// Release parent-owned subscriptions synchronously before an iframe's pagehide completes.
+watch(queryCache, (cache, _, onCleanup) => {
   if (!cache) {
     return
   }
@@ -125,10 +124,9 @@ watchEffect((onCleanup) => {
     queries.value = []
     selectedQuery.value = null
   })
-})
+}, { immediate: true, flush: 'sync' })
 
-watchEffect((onCleanup) => {
-  const cache = mutationCache.value
+watch(mutationCache, (cache, _, onCleanup) => {
   if (!cache) {
     return
   }
@@ -141,7 +139,7 @@ watchEffect((onCleanup) => {
     mutations.value = []
     selectedMutation.value = null
   })
-})
+}, { immediate: true, flush: 'sync' })
 
 function selectQuery(query: Query) {
   selectedQuery.value = toRaw(query)
@@ -245,7 +243,17 @@ function handleRestoreTriggerLoading(query: Query) {
 </script>
 
 <template>
-  <div class="h-full flex flex-col">
+  <div
+    v-if="connectionMessage"
+    role="status"
+    class="p-4"
+  >
+    {{ connectionMessage }}
+  </div>
+  <div
+    v-else
+    class="h-full flex flex-col"
+  >
     <div
       class="flex gap-2 p-2"
       :style="{ 'border-bottom': '1px solid var(--nq-border-strong)' }"

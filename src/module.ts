@@ -51,6 +51,9 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-query',
     configKey: 'nuxtQuery',
     version,
+    compatibility: {
+      nuxt: '^4.5.0',
+    },
   },
 
   // Default configuration options of the Nuxt module

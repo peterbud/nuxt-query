@@ -3,23 +3,29 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 # Remove default permissions of GITHUB_TOKEN for security
 # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
 permissions: {}
 
+# Share this group with the 1.x workflow so registry checks and publication cannot race.
+concurrency:
+  group: npm-release
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7.0.1
         with:
+          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: 📦 Enable corepack
@@ -29,8 +35,14 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version: 24
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
           cache: pnpm
+
+      - name: 🔎 Validate release tag and branch
+        id: target
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: node .github/scripts/release-target.mjs
 
       - run: pnpm config set registry https://registry.npmjs.org
       - run: npm config set registry https://registry.npmjs.org
@@ -41,8 +53,17 @@ jobs:
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
+      - name: Install Chromium
+        run: pnpm exec playwright-core install --with-deps chromium
+
+      - name: 👀 Lint project
+        run: pnpm lint
+
+      - name: 🧪 Check types and tests
+        run: pnpm test:types && pnpm test
+
       - name: 🏗️ Build production bundle
         run: pnpm run build
 
       - name: 📦 Release
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish --access public --no-git-checks --tag "${{ steps.target.outputs.npm_tag }}"

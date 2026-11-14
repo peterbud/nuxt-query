@@ -45,7 +45,7 @@
     "dev:client": "concurrently \"nuxt-cli dev client --port 3300\" \"nuxt-cli dev playground\"",
     "dev:build": "nuxt-cli build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt-cli prepare playground",
-    "release": "pnpm lint && pnpm build && changelogen --release && npm publish && git push --follow-tags",
+    "release": "pnpm lint && pnpm test:types && pnpm test && pnpm build && changelogen --bump",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
@@ -55,6 +55,7 @@
     "@nuxt/devtools-kit": "catalog:",
     "@nuxt/kit": "catalog:",
     "@tanstack/vue-query": "catalog:",
+    "@vitejs/devtools-kit": "catalog:",
     "defu": "catalog:",
     "pkg-types": "catalog:",
     "sirv": "catalog:"
@@ -75,6 +76,7 @@
     "playwright-core": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
+    "vue": "catalog:",
     "vue-tsc": "catalog:"
   },
   "packageManager": "pnpm@11.28.11"

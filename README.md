@@ -16,10 +16,31 @@ A powerful Nuxt module for integrating [TanStack Query](https://tanstack.com/que
 - 💪 &nbsp; Full TypeScript support with Vue Query configuration
 - 🏆 &nbsp; Advanced `QueryClient` setup with custom handlers via hooks
 - 🤖 &nbsp; Configurable auto-imports for Vue Query composables
-- 🧩 &nbsp; Nuxt DevTools integration for debugging and inspection
+- 🧩 &nbsp; Native Nuxt DevTools 4 integration for debugging and inspection
 
 ## Installation
 
+The 2.x release channel is `beta` until stable 2.0 ships. During beta, npm's
+`latest` tag stays on stable 1.x, so normal installs remain on DevTools 3.
+To opt into published 2.x betas:
+
+```bash
+npm install @peterbud/nuxt-query@beta
+```
+
+### 2.x Compatibility
+
+Requires **Nuxt 4.5+ (Nuxt 4)** with Vite. The optional DevTools panel requires
+**Nuxt DevTools 4** and **Vite 8.1.5+**. Nuxt 4 bundles DevTools 3; apply the [upstream DevTools 4 override](https://nuxt.com/modules/devtools/upgrading-to-v4) to enable the Devtools panel.
+
+On older Nuxt (or Nuxt 3), or with DevTools 3, stay on 1.x:
+`npm install @peterbud/nuxt-query@1`. After stable 2.0 ships, 1.x maintenance
+releases use `legacy` instead of `latest`. Critical bug and security fixes for
+1.x continue for six months after stable 2.0, not the first beta.
+
+### Stable Installation
+
+These commands install `latest`: 1.x during beta, then 2.x after stable 2.0.
 You can add the module via the Nuxt CLI:
 
 ```bash
@@ -144,7 +165,9 @@ Use `defaultOptions.dehydrate` on a custom QueryClient to filter or transform de
 
 ## Nuxt DevTools Integration
 
-Nuxt Query integrates with Nuxt DevTools to provide a dedicated tab for Vue Query, where you can inspect the state of your queries, view their cache, and properties, initiate refetch or remove certain queries and more.
+The **Nuxt Query** dock under **Nuxt → Modules** lets you inspect, refetch,
+and remove queries. Closing or remounting the panel preserves application
+query and mutation caches.
 
 ![Nuxt DevTools](assets/devtools.png)
 
@@ -159,7 +182,7 @@ Also, you can inspect your mutation cache using the same DevTools in a convenien
   
   ```bash
   # Install dependencies
-  npm install
+  pnpm install --frozen-lockfile
   
   # Generate type stubs
   npm run dev:prepare
@@ -182,9 +205,6 @@ Also, you can inspect your mutation cache using the same DevTools in a convenien
   
   # Build the module
   npm run build
-
-  # Release new version
-  npm run release
   ```
 
 </details>
