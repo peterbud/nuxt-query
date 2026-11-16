@@ -79,5 +79,5 @@
     "vue": "catalog:",
     "vue-tsc": "catalog:"
   },
-  "packageManager": "pnpm@11.28.11"
+  "packageManager": "pnpm@11.28.12"
 }
